@@ -30,6 +30,28 @@ namespace Redis.Cache.Test
             }
         }
 
+        [TestMethod]
+        public void Test_KeyValue_2()
+        {
+            //STRING_KEY / STRING_VALUE == TTL ABS|TTL SLI|DATA.
+
+            // 228.8MB
+
+            for (int i = 0; i < 100001; i++)
+            {
+                string k = Guid.NewGuid().ToString();
+                string v = k + " :: " + Properties.Settings.Default.Value_Text;
+                DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
+                DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
+
+                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
+                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+
+                Redis.Cache.RedisDal dal = new RedisDal();
+                dal.AddItem(k, dt_TTL_ABS_str + "|" + dt_TTL_SLI_str + "|" + v); // add data with TTL
+            }
+        }
+
         //[TestMethod]
         //public void Test_Set()
         //{
