@@ -1,4 +1,4 @@
 Redis.Cache
 ===========
 
-Library C# for manage cache with Redis
+Small library for manage cache with Redis.
