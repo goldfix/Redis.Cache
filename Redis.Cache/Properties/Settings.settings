@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Redis.Cache.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultAbsoluteExpiration" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:00</Value>
+    </Setting>
+    <Setting Name="DefaultSlidingExpiration" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:00</Value>
+    </Setting>
+    <Setting Name="RedisConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">127.0.0.1:6379</Value>
+    </Setting>
+    <Setting Name="RedisDatabase" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TypeStorage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">UseList</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
