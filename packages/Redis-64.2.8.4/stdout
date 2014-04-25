@@ -1,0 +1,802 @@
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 968
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[968] 19 Apr 17:20:36.210 # Server started, Redis version 2.8.4
+[968] 19 Apr 17:20:36.212 * The server is now ready to accept connections on port 6379
+[968] 19 Apr 18:33:16.709 * DB saved on disk
+[968] 19 Apr 18:41:00.228 * 10 changes in 300 seconds. Saving...
+[968] 19 Apr 18:41:00.342 # fork operation complete
+[968] 19 Apr 18:41:00.472 * Background saving terminated with success
+[968] 19 Apr 18:42:01.084 * 10000 changes in 60 seconds. Saving...
+[968] 19 Apr 18:42:01.896 # fork operation complete
+[968] 19 Apr 18:42:02.083 * Background saving terminated with success
+[968] 19 Apr 18:42:29.086 * DB saved on disk
+[968] 19 Apr 18:43:16.885 * DB saved on disk
+[968] 19 Apr 18:44:17.101 * 10000 changes in 60 seconds. Saving...
+[968] 19 Apr 18:44:17.241 # fork operation complete
+[968] 19 Apr 18:44:17.273 * Background saving terminated with success
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3100
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[3100] 19 Apr 18:45:18.914 # Server started, Redis version 2.8.4
+[3100] 19 Apr 18:45:18.914 * DB loaded from disk: 0.000 seconds
+[3100] 19 Apr 18:45:18.914 * The server is now ready to accept connections on port 6379
+[3100] 19 Apr 18:46:19.053 * 10000 changes in 60 seconds. Saving...
+[3100] 19 Apr 18:46:19.178 # fork operation complete
+[3100] 19 Apr 18:46:19.193 * Background saving terminated with success
+[3100] 19 Apr 18:46:38.054 * DB saved on disk
+[3100] 19 Apr 18:47:39.064 * 10000 changes in 60 seconds. Saving...
+[3100] 19 Apr 18:47:39.189 # fork operation complete
+[3100] 19 Apr 18:47:39.220 * Background saving terminated with success
+[3100] 19 Apr 18:48:40.044 * 10000 changes in 60 seconds. Saving...
+[3100] 19 Apr 18:48:40.169 # fork operation complete
+[3100] 19 Apr 18:48:40.185 * Background saving terminated with success
+[3100] 19 Apr 18:49:13.627 * DB saved on disk
+[3100] 19 Apr 18:50:14.056 * 10000 changes in 60 seconds. Saving...
+[3100] 19 Apr 18:50:14.165 # fork operation complete
+[3100] 19 Apr 18:50:14.196 * Background saving terminated with success
+[3100] 19 Apr 18:51:03.336 * DB saved on disk
+[3100] 19 Apr 18:52:04.007 * 10000 changes in 60 seconds. Saving...
+[3100] 19 Apr 18:52:04.350 # fork operation complete
+[3100] 19 Apr 18:52:04.382 * Background saving terminated with success
+[3100] 19 Apr 18:52:14.069 * DB saved on disk
+[3100] 19 Apr 18:52:19.217 * DB saved on disk
+[3100] 19 Apr 18:52:21.526 * DB saved on disk
+[3100] 19 Apr 18:52:23.367 * DB saved on disk
+[3100] 19 Apr 18:52:24.630 * DB saved on disk
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3960
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[3960] 19 Apr 18:53:32.084 # Server started, Redis version 2.8.4
+[3960] 19 Apr 18:53:32.084 * DB loaded from disk: 0.000 seconds
+[3960] 19 Apr 18:53:32.084 * The server is now ready to accept connections on port 6379
+[3960] 19 Apr 18:53:44.189 * DB saved on disk
+[3960] 19 Apr 18:54:34.546 * DB saved on disk
+[3960] 19 Apr 18:55:25.061 * DB saved on disk
+[3960] 19 Apr 18:56:26.104 * 10000 changes in 60 seconds. Saving...
+[3960] 19 Apr 18:56:26.213 # fork operation complete
+[3960] 19 Apr 18:56:26.260 * Background saving terminated with success
+[3960] 19 Apr 18:57:27.085 * 10000 changes in 60 seconds. Saving...
+[3960] 19 Apr 18:57:27.194 # fork operation complete
+[3960] 19 Apr 18:57:27.225 * Background saving terminated with success
+[3960] 19 Apr 18:58:28.050 * 10000 changes in 60 seconds. Saving...
+[3960] 19 Apr 18:58:28.174 # fork operation complete
+[3960] 19 Apr 18:58:28.221 * Background saving terminated with success
+[3960] 19 Apr 18:59:26.284 * DB saved on disk
+[3960] 19 Apr 18:59:41.497 * DB saved on disk
+[3960] 19 Apr 18:59:49.594 # User requested shutdown...
+[3960] 19 Apr 18:59:49.594 * Saving the final RDB snapshot before exiting.
+[3960] 19 Apr 18:59:49.594 * DB saved on disk
+[3960] 19 Apr 18:59:49.594 # Redis is now ready to exit, bye bye...
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 4004
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[4004] 19 Apr 18:59:54.399 # Server started, Redis version 2.8.4
+[4004] 19 Apr 18:59:54.399 * DB loaded from disk: 0.000 seconds
+[4004] 19 Apr 18:59:54.399 * The server is now ready to accept connections on port 6379
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 2136
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[2136] 19 Apr 19:00:04.882 # Server started, Redis version 2.8.4
+[2136] 19 Apr 19:00:04.882 * DB loaded from disk: 0.000 seconds
+[2136] 19 Apr 19:00:04.882 * The server is now ready to accept connections on port 6379
+[2136] 19 Apr 19:00:14.211 * DB saved on disk
+[2136] 19 Apr 19:00:57.816 * DB saved on disk
+[2136] 19 Apr 19:01:58.072 * 10000 changes in 60 seconds. Saving...
+[2136] 19 Apr 19:01:58.525 # fork operation complete
+[2136] 19 Apr 19:01:58.572 * Background saving terminated with success
+[2136] 19 Apr 19:02:01.333 * DB saved on disk
+[2136] 19 Apr 19:02:44.093 * DB saved on disk
+[2136] 19 Apr 19:03:05.840 # 
+
+=== REDIS BUG REPORT START: Cut & paste starting from here ===
+[2136] 19 Apr 19:03:05.843 # ------------------------------------------------
+[2136] 19 Apr 19:03:05.846 # !!! Software Failure. Press left mouse button to continue
+[2136] 19 Apr 19:03:05.848 # Guru Meditation: "Unknown encoding type" #..\src\object.c:362
+[2136] 19 Apr 19:03:05.853 # ------------------------------------------------
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 1488
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[1488] 19 Apr 19:03:13.001 # Server started, Redis version 2.8.4
+[1488] 19 Apr 19:03:13.001 * DB loaded from disk: 0.000 seconds
+[1488] 19 Apr 19:03:13.016 * The server is now ready to accept connections on port 6379
+[1488] 19 Apr 19:03:21.253 * DB saved on disk
+[1488] 19 Apr 19:04:22.006 * 10000 changes in 60 seconds. Saving...
+[1488] 19 Apr 19:04:22.349 # fork operation complete
+[1488] 19 Apr 19:04:22.396 * Background saving terminated with success
+[1488] 19 Apr 19:05:23.013 * 10000 changes in 60 seconds. Saving...
+[1488] 19 Apr 19:05:23.324 # fork operation complete
+[1488] 19 Apr 19:05:23.348 * Background saving terminated with success
+[1488] 19 Apr 19:06:24.053 * 10000 changes in 60 seconds. Saving...
+[1488] 19 Apr 19:06:24.363 # fork operation complete
+[1488] 19 Apr 19:06:24.388 * Background saving terminated with success
+[1488] 19 Apr 19:07:25.095 * 10000 changes in 60 seconds. Saving...
+[1488] 19 Apr 19:07:25.405 # fork operation complete
+[1488] 19 Apr 19:07:25.433 * Background saving terminated with success
+[1488] 19 Apr 19:08:26.040 * 10000 changes in 60 seconds. Saving...
+[1488] 19 Apr 19:08:26.350 # fork operation complete
+[1488] 19 Apr 19:08:26.376 * Background saving terminated with success
+[1488] 19 Apr 19:09:27.082 * 10000 changes in 60 seconds. Saving...
+[1488] 19 Apr 19:09:27.393 # fork operation complete
+[1488] 19 Apr 19:09:27.419 * Background saving terminated with success
+[1488] 19 Apr 19:10:17.085 * DB saved on disk
+[1488] 19 Apr 19:10:18.132 * DB saved on disk
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3876
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[3876] 19 Apr 19:10:32.224 # Server started, Redis version 2.8.4
+[3876] 19 Apr 19:10:32.224 * DB loaded from disk: 0.000 seconds
+[3876] 19 Apr 19:10:32.224 * The server is now ready to accept connections on port 6379
+[3876] 19 Apr 19:11:04.357 * DB saved on disk
+[3876] 19 Apr 19:12:05.008 * 10000 changes in 60 seconds. Saving...
+[3876] 19 Apr 19:12:05.351 # fork operation complete
+[3876] 19 Apr 19:12:05.383 * Background saving terminated with success
+[3876] 19 Apr 19:12:22.558 * DB saved on disk
+[3876] 19 Apr 19:12:29.376 # User requested shutdown...
+[3876] 19 Apr 19:12:29.376 * Saving the final RDB snapshot before exiting.
+[3876] 19 Apr 19:12:29.734 * DB saved on disk
+[3876] 19 Apr 19:12:29.734 # Redis is now ready to exit, bye bye...
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3320
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[3320] 19 Apr 19:12:38.330 # Server started, Redis version 2.8.4
+[3320] 19 Apr 19:12:38.533 * DB loaded from disk: 0.203 seconds
+[3320] 19 Apr 19:12:38.533 * The server is now ready to accept connections on port 6379
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 1344
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[1344] 19 Apr 19:12:47.144 # Server started, Redis version 2.8.4
+[1344] 19 Apr 19:12:47.347 * DB loaded from disk: 0.203 seconds
+[1344] 19 Apr 19:12:47.347 * The server is now ready to accept connections on port 6379
+[1344] 19 Apr 19:12:59.218 * DB saved on disk
+[1344] 19 Apr 19:13:09.234 * DB saved on disk
+[1344] 19 Apr 19:42:35.016 * 1 changes in 900 seconds. Saving...
+[1344] 19 Apr 19:42:35.125 # fork operation complete
+[1344] 19 Apr 19:42:35.219 * Background saving terminated with success
+[1344] 19 Apr 19:43:21.441 * DB saved on disk
+[1344] 19 Apr 19:50:04.299 * DB saved on disk
+[1344] 19 Apr 19:50:11.194 * DB saved on disk
+[1344] 19 Apr 19:50:13.409 * DB saved on disk
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3500
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[3500] 19 Apr 19:53:54.025 # Server started, Redis version 2.8.4
+[3500] 19 Apr 19:53:54.025 * DB loaded from disk: 0.000 seconds
+[3500] 19 Apr 19:53:54.025 * The server is now ready to accept connections on port 6379
+[3500] 19 Apr 19:54:55.021 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 19:54:56.035 # fork operation complete
+[3500] 19 Apr 19:54:56.080 * Background saving terminated with success
+[3500] 19 Apr 19:55:57.056 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 19:55:59.928 # fork operation complete
+[3500] 19 Apr 19:55:59.975 * Background saving terminated with success
+[3500] 19 Apr 19:56:02.471 * DB saved on disk
+[3500] 19 Apr 19:57:03.100 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 19:57:03.225 # fork operation complete
+[3500] 19 Apr 19:57:03.256 * Background saving terminated with success
+[3500] 19 Apr 19:58:04.081 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 19:58:04.206 # fork operation complete
+[3500] 19 Apr 19:58:04.237 * Background saving terminated with success
+[3500] 19 Apr 19:59:05.061 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 19:59:05.186 # fork operation complete
+[3500] 19 Apr 19:59:05.217 * Background saving terminated with success
+[3500] 19 Apr 20:00:06.042 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:00:06.151 # fork operation complete
+[3500] 19 Apr 20:00:06.182 * Background saving terminated with success
+[3500] 19 Apr 20:01:07.007 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:01:07.132 # fork operation complete
+[3500] 19 Apr 20:01:07.163 * Background saving terminated with success
+[3500] 19 Apr 20:02:08.024 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:02:08.149 # fork operation complete
+[3500] 19 Apr 20:02:08.180 * Background saving terminated with success
+[3500] 19 Apr 20:03:09.005 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:03:09.129 # fork operation complete
+[3500] 19 Apr 20:03:09.161 * Background saving terminated with success
+[3500] 19 Apr 20:04:10.040 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:04:10.165 # fork operation complete
+[3500] 19 Apr 20:04:10.196 * Background saving terminated with success
+[3500] 19 Apr 20:05:11.036 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:05:11.145 # fork operation complete
+[3500] 19 Apr 20:05:11.177 * Background saving terminated with success
+[3500] 19 Apr 20:06:12.001 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:06:12.126 # fork operation complete
+[3500] 19 Apr 20:06:12.157 * Background saving terminated with success
+[3500] 19 Apr 20:07:13.106 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:07:13.216 # fork operation complete
+[3500] 19 Apr 20:07:13.247 * Background saving terminated with success
+[3500] 19 Apr 20:08:14.074 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:08:14.198 # fork operation complete
+[3500] 19 Apr 20:08:14.230 * Background saving terminated with success
+[3500] 19 Apr 20:09:15.083 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:09:15.192 # fork operation complete
+[3500] 19 Apr 20:09:15.224 * Background saving terminated with success
+[3500] 19 Apr 20:10:16.080 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:10:16.192 # fork operation complete
+[3500] 19 Apr 20:10:16.226 * Background saving terminated with success
+[3500] 19 Apr 20:11:17.013 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:11:17.122 # fork operation complete
+[3500] 19 Apr 20:11:17.153 * Background saving terminated with success
+[3500] 19 Apr 20:12:18.102 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:12:18.227 # fork operation complete
+[3500] 19 Apr 20:12:18.258 * Background saving terminated with success
+[3500] 19 Apr 20:13:19.078 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:13:19.202 # fork operation complete
+[3500] 19 Apr 20:13:19.234 * Background saving terminated with success
+[3500] 19 Apr 20:13:31.090 * DB saved on disk
+[3500] 19 Apr 20:14:32.001 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:14:32.113 # fork operation complete
+[3500] 19 Apr 20:14:32.145 * Background saving terminated with success
+[3500] 19 Apr 20:15:18.467 * DB saved on disk
+[3500] 19 Apr 20:16:19.095 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:16:19.220 # fork operation complete
+[3500] 19 Apr 20:16:19.251 * Background saving terminated with success
+[3500] 19 Apr 20:17:20.075 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:17:20.200 # fork operation complete
+[3500] 19 Apr 20:17:20.231 * Background saving terminated with success
+[3500] 19 Apr 20:18:21.056 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:18:21.181 # fork operation complete
+[3500] 19 Apr 20:18:21.212 * Background saving terminated with success
+[3500] 19 Apr 20:19:22.036 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:19:22.161 # fork operation complete
+[3500] 19 Apr 20:19:22.192 * Background saving terminated with success
+[3500] 19 Apr 20:20:23.017 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:20:23.142 # fork operation complete
+[3500] 19 Apr 20:20:23.173 * Background saving terminated with success
+[3500] 19 Apr 20:20:27.463 * DB saved on disk
+[3500] 19 Apr 20:21:28.011 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:21:30.775 # fork operation complete
+[3500] 19 Apr 20:21:30.849 * Background saving terminated with success
+[3500] 19 Apr 20:22:31.089 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:22:33.835 # fork operation complete
+[3500] 19 Apr 20:22:33.866 * Background saving terminated with success
+[3500] 19 Apr 20:23:34.056 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:23:36.802 # fork operation complete
+[3500] 19 Apr 20:23:36.833 * Background saving terminated with success
+[3500] 19 Apr 20:24:37.003 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:24:39.733 # fork operation complete
+[3500] 19 Apr 20:24:39.764 * Background saving terminated with success
+[3500] 19 Apr 20:25:40.042 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:25:42.788 # fork operation complete
+[3500] 19 Apr 20:25:42.819 * Background saving terminated with success
+[3500] 19 Apr 20:26:39.759 * DB saved on disk
+[3500] 19 Apr 20:27:40.054 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:27:42.800 # fork operation complete
+[3500] 19 Apr 20:27:42.862 * Background saving terminated with success
+[3500] 19 Apr 20:28:11.660 * DB saved on disk
+[3500] 19 Apr 20:29:12.026 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:29:12.146 # fork operation complete
+[3500] 19 Apr 20:29:12.209 * Background saving terminated with success
+[3500] 19 Apr 20:29:58.507 * DB saved on disk
+[3500] 19 Apr 20:30:59.071 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:31:01.925 # fork operation complete
+[3500] 19 Apr 20:31:01.988 * Background saving terminated with success
+[3500] 19 Apr 20:32:02.051 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:32:04.905 # fork operation complete
+[3500] 19 Apr 20:32:04.937 * Background saving terminated with success
+[3500] 19 Apr 20:32:31.909 * DB saved on disk
+[3500] 19 Apr 20:33:02.076 * DB saved on disk
+[3500] 19 Apr 20:34:03.084 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:34:06.006 # fork operation complete
+[3500] 19 Apr 20:34:06.071 * Background saving terminated with success
+[3500] 19 Apr 20:35:07.079 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:35:09.918 # fork operation complete
+[3500] 19 Apr 20:35:09.949 * Background saving terminated with success
+[3500] 19 Apr 20:36:10.009 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:36:12.864 # fork operation complete
+[3500] 19 Apr 20:36:12.895 * Background saving terminated with success
+[3500] 19 Apr 20:37:13.073 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:37:15.803 # fork operation complete
+[3500] 19 Apr 20:37:15.834 * Background saving terminated with success
+[3500] 19 Apr 20:38:16.056 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:38:18.786 # fork operation complete
+[3500] 19 Apr 20:38:18.817 * Background saving terminated with success
+[3500] 19 Apr 20:38:57.864 * DB saved on disk
+[3500] 19 Apr 20:39:36.315 * DB saved on disk
+[3500] 19 Apr 20:40:37.071 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:40:37.192 # fork operation complete
+[3500] 19 Apr 20:40:37.256 * Background saving terminated with success
+[3500] 19 Apr 20:41:38.092 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:41:40.947 # fork operation complete
+[3500] 19 Apr 20:41:41.009 * Background saving terminated with success
+[3500] 19 Apr 20:42:42.052 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:42:44.798 # fork operation complete
+[3500] 19 Apr 20:42:44.829 * Background saving terminated with success
+[3500] 19 Apr 20:43:45.012 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:43:47.851 # fork operation complete
+[3500] 19 Apr 20:43:47.882 * Background saving terminated with success
+[3500] 19 Apr 20:44:18.021 * DB saved on disk
+[3500] 19 Apr 20:45:19.099 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:45:19.219 # fork operation complete
+[3500] 19 Apr 20:45:19.282 * Background saving terminated with success
+[3500] 19 Apr 20:45:36.844 * DB saved on disk
+[3500] 19 Apr 20:46:37.001 * 10000 changes in 60 seconds. Saving...
+[3500] 19 Apr 20:46:39.856 # fork operation complete
+[3500] 19 Apr 20:46:39.919 * Background saving terminated with success
+[3500] 19 Apr 20:46:55.035 * DB saved on disk
+[3500] 19 Apr 20:47:00.386 # User requested shutdown...
+[3500] 19 Apr 20:47:00.386 * Saving the final RDB snapshot before exiting.
+[3500] 19 Apr 20:47:00.401 * DB saved on disk
+[3500] 19 Apr 20:47:00.401 # Redis is now ready to exit, bye bye...
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 2424
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[2424] 20 Apr 11:08:14.830 # Server started, Redis version 2.8.4
+[2424] 20 Apr 11:08:14.846 * DB loaded from disk: 0.016 seconds
+[2424] 20 Apr 11:08:14.846 * The server is now ready to accept connections on port 6379
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3296
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[3296] 20 Apr 14:31:03.305 # Server started, Redis version 2.8.4
+[3296] 20 Apr 14:31:03.305 * DB loaded from disk: 0.000 seconds
+[3296] 20 Apr 14:31:03.305 * The server is now ready to accept connections on port 6379
+[3296] 20 Apr 14:46:04.071 * 1 changes in 900 seconds. Saving...
+[3296] 20 Apr 14:46:04.071 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 14:46:04.180 * 1 changes in 900 seconds. Saving...
+[3296] 20 Apr 14:46:04.180 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 14:46:04.290 * 1 changes in 900 seconds. Saving...
+[3296] 20 Apr 14:46:04.414 # fork operation complete
+[3296] 20 Apr 14:46:04.477 * Background saving terminated with success
+[3296] 20 Apr 15:01:05.098 * 1 changes in 900 seconds. Saving...
+[3296] 20 Apr 15:01:05.106 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:01:05.208 * 1 changes in 900 seconds. Saving...
+[3296] 20 Apr 15:01:05.212 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:01:05.314 * 1 changes in 900 seconds. Saving...
+[3296] 20 Apr 15:01:05.426 # fork operation complete
+[3296] 20 Apr 15:01:05.488 * Background saving terminated with success
+[3296] 20 Apr 15:01:06.695 * DB saved on disk
+[3296] 20 Apr 15:06:07.049 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:06:07.049 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:06:07.158 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:06:07.158 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:06:07.267 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:06:07.392 # fork operation complete
+[3296] 20 Apr 15:06:07.439 * Background saving terminated with success
+[3296] 20 Apr 15:11:08.083 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:11:08.083 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:11:08.193 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:11:08.193 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:11:08.302 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:11:08.427 # fork operation complete
+[3296] 20 Apr 15:11:08.473 * Background saving terminated with success
+[3296] 20 Apr 15:16:09.088 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:16:09.088 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:16:09.197 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:16:09.197 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:16:09.306 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:16:09.431 # fork operation complete
+[3296] 20 Apr 15:16:09.478 * Background saving terminated with success
+[3296] 20 Apr 15:21:10.102 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:21:10.102 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:21:10.211 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:21:10.211 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:21:10.321 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:21:10.430 # fork operation complete
+[3296] 20 Apr 15:21:10.477 * Background saving terminated with success
+[3296] 20 Apr 15:26:11.041 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:26:11.041 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:26:11.150 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:26:11.150 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:26:11.259 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:26:11.384 # fork operation complete
+[3296] 20 Apr 15:26:11.415 * Background saving terminated with success
+[3296] 20 Apr 15:31:12.019 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:31:12.019 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:31:12.128 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:31:12.128 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:31:12.237 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:31:12.346 # fork operation complete
+[3296] 20 Apr 15:31:12.393 * Background saving terminated with success
+[3296] 20 Apr 15:36:13.072 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:36:13.077 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:36:13.180 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:36:13.184 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:36:13.287 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:36:13.399 # fork operation complete
+[3296] 20 Apr 15:36:13.439 * Background saving terminated with success
+[3296] 20 Apr 15:41:14.076 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:41:14.200 # fork operation complete
+[3296] 20 Apr 15:41:14.232 * Background saving terminated with success
+[3296] 20 Apr 15:46:15.102 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:46:15.102 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:46:15.211 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:46:15.211 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:46:15.321 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:46:15.445 # fork operation complete
+[3296] 20 Apr 15:46:15.492 * Background saving terminated with success
+[3296] 20 Apr 15:51:16.008 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:51:16.120 # fork operation complete
+[3296] 20 Apr 15:51:16.161 * Background saving terminated with success
+[3296] 20 Apr 15:56:17.013 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:56:17.013 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:56:17.122 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:56:17.122 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 15:56:17.231 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 15:56:17.356 # fork operation complete
+[3296] 20 Apr 15:56:17.403 * Background saving terminated with success
+[3296] 20 Apr 16:01:18.054 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:01:18.179 # fork operation complete
+[3296] 20 Apr 16:01:18.225 * Background saving terminated with success
+[3296] 20 Apr 16:06:19.076 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:06:19.076 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:06:19.185 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:06:19.185 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:06:19.294 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:06:19.419 # fork operation complete
+[3296] 20 Apr 16:06:19.466 * Background saving terminated with success
+[3296] 20 Apr 16:11:20.063 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:11:20.063 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:11:20.172 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:11:20.172 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:11:20.281 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:11:20.406 # fork operation complete
+[3296] 20 Apr 16:11:20.453 * Background saving terminated with success
+[3296] 20 Apr 16:16:21.018 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:16:21.018 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:16:21.128 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:16:21.128 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:16:21.237 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:16:21.362 # fork operation complete
+[3296] 20 Apr 16:16:21.393 * Background saving terminated with success
+[3296] 20 Apr 16:21:22.099 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:21:22.105 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:21:22.207 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:21:22.211 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:21:22.313 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:21:22.424 # fork operation complete
+[3296] 20 Apr 16:21:22.486 * Background saving terminated with success
+[3296] 20 Apr 16:26:23.053 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:26:23.053 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:26:23.162 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:26:23.162 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:26:23.271 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:26:23.380 # fork operation complete
+[3296] 20 Apr 16:26:23.427 * Background saving terminated with success
+[3296] 20 Apr 16:31:24.014 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:31:24.014 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:31:24.123 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:31:24.123 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:31:24.232 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:31:24.342 # fork operation complete
+[3296] 20 Apr 16:31:24.373 * Background saving terminated with success
+[3296] 20 Apr 16:36:25.017 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:36:25.017 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:36:25.126 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:36:25.126 # Can't save in background: fork: Invalid argument
+[3296] 20 Apr 16:36:25.235 * 10 changes in 300 seconds. Saving...
+[3296] 20 Apr 16:36:25.360 # fork operation complete
+[3296] 20 Apr 16:36:25.407 * Background saving terminated with success
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 2336
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[2336] 20 Apr 16:51:40.709 # Server started, Redis version 2.8.4
+[2336] 20 Apr 16:51:40.709 * DB loaded from disk: 0.000 seconds
+[2336] 20 Apr 16:51:40.709 * The server is now ready to accept connections on port 6379
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3256
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[3256] 20 Apr 17:05:20.273 # Server started, Redis version 2.8.4
+[3256] 20 Apr 17:05:20.273 * DB loaded from disk: 0.000 seconds
+[3256] 20 Apr 17:05:20.273 * The server is now ready to accept connections on port 6379
+[3256] 20 Apr 17:20:21.000 * 1 changes in 900 seconds. Saving...
+[3256] 20 Apr 17:20:21.156 # fork operation complete
+[3256] 20 Apr 17:20:21.375 * Background saving terminated with success
+[3256] 20 Apr 17:22:05.871 * DB saved on disk
+[3256] 20 Apr 17:34:45.278 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 17:34:45.402 # fork operation complete
+[3256] 20 Apr 17:34:45.621 * Background saving terminated with success
+[3256] 20 Apr 17:39:46.018 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 17:39:46.160 # fork operation complete
+[3256] 20 Apr 17:39:46.440 * Background saving terminated with success
+[3256] 20 Apr 17:44:47.011 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 17:44:47.135 # fork operation complete
+[3256] 20 Apr 17:44:47.260 * Background saving terminated with success
+[3256] 20 Apr 17:49:48.013 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 17:49:48.153 # fork operation complete
+[3256] 20 Apr 17:49:48.294 * Background saving terminated with success
+[3256] 20 Apr 17:54:49.094 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 17:54:49.250 # fork operation complete
+[3256] 20 Apr 17:54:49.546 * Background saving terminated with success
+[3256] 20 Apr 17:59:50.065 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 17:59:50.205 # fork operation complete
+[3256] 20 Apr 17:59:50.408 * Background saving terminated with success
+[3256] 20 Apr 18:04:51.058 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:04:51.199 # fork operation complete
+[3256] 20 Apr 18:04:51.401 * Background saving terminated with success
+[3256] 20 Apr 18:09:52.092 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:09:52.217 # fork operation complete
+[3256] 20 Apr 18:09:52.342 * Background saving terminated with success
+[3256] 20 Apr 18:14:53.001 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:14:53.141 # fork operation complete
+[3256] 20 Apr 18:14:53.282 * Background saving terminated with success
+[3256] 20 Apr 18:19:54.068 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:19:54.210 # fork operation complete
+[3256] 20 Apr 18:19:54.472 * Background saving terminated with success
+[3256] 20 Apr 18:24:55.015 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:24:55.155 # fork operation complete
+[3256] 20 Apr 18:24:55.358 * Background saving terminated with success
+[3256] 20 Apr 18:29:56.080 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:29:56.220 # fork operation complete
+[3256] 20 Apr 18:29:56.438 * Background saving terminated with success
+[3256] 20 Apr 18:34:57.098 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:34:57.238 # fork operation complete
+[3256] 20 Apr 18:34:57.363 * Background saving terminated with success
+[3256] 20 Apr 18:39:58.100 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:39:58.241 # fork operation complete
+[3256] 20 Apr 18:39:58.381 * Background saving terminated with success
+[3256] 20 Apr 18:44:59.047 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:44:59.191 # fork operation complete
+[3256] 20 Apr 18:44:59.428 * Background saving terminated with success
+[3256] 20 Apr 18:50:00.051 * 10 changes in 300 seconds. Saving...
+[3256] 20 Apr 18:50:00.191 # fork operation complete
+[3256] 20 Apr 18:50:00.394 * Background saving terminated with success
+[3256] 20 Apr 18:50:41.843 # User requested shutdown...
+[3256] 20 Apr 18:50:41.843 * Saving the final RDB snapshot before exiting.
+[3256] 20 Apr 18:50:41.843 * DB saved on disk
+[3256] 20 Apr 18:50:41.843 # Redis is now ready to exit, bye bye...
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3012
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+[3012] 21 Apr 11:26:40.792 # Server started, Redis version 2.8.4
+[3012] 21 Apr 11:26:40.792 * DB loaded from disk: 0.000 seconds
+[3012] 21 Apr 11:26:40.792 * The server is now ready to accept connections on port 6379
+[3012] 21 Apr 11:57:21.268 * 1 changes in 900 seconds. Saving...
+[3012] 21 Apr 11:57:21.424 # fork operation complete
+[3012] 21 Apr 11:57:21.689 * Background saving terminated with success
+[3012] 21 Apr 12:03:42.595 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:03:42.735 # fork operation complete
+[3012] 21 Apr 12:03:42.985 * Background saving terminated with success
+[3012] 21 Apr 12:08:43.083 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:08:43.223 # fork operation complete
+[3012] 21 Apr 12:08:43.410 * Background saving terminated with success
+[3012] 21 Apr 12:13:44.085 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:13:44.226 # fork operation complete
+[3012] 21 Apr 12:13:44.413 * Background saving terminated with success
+[3012] 21 Apr 12:18:45.045 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:18:45.185 # fork operation complete
+[3012] 21 Apr 12:18:45.372 * Background saving terminated with success
+[3012] 21 Apr 12:23:46.076 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:23:46.217 # fork operation complete
+[3012] 21 Apr 12:23:46.404 * Background saving terminated with success
+[3012] 21 Apr 12:28:47.032 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:28:47.165 # fork operation complete
+[3012] 21 Apr 12:28:47.291 * Background saving terminated with success
+[3012] 21 Apr 12:33:48.106 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:33:48.262 # fork operation complete
+[3012] 21 Apr 12:33:48.480 * Background saving terminated with success
+[3012] 21 Apr 12:38:49.094 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:38:49.234 # fork operation complete
+[3012] 21 Apr 12:38:49.406 * Background saving terminated with success
+[3012] 21 Apr 12:43:50.043 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:43:50.184 # fork operation complete
+[3012] 21 Apr 12:43:50.355 * Background saving terminated with success
+[3012] 21 Apr 12:48:51.041 * 10 changes in 300 seconds. Saving...
+[3012] 21 Apr 12:48:51.182 # fork operation complete
+[3012] 21 Apr 12:48:51.353 * Background saving terminated with success
+[3012] 21 Apr 12:51:10.443 # User requested shutdown...
+[3012] 21 Apr 12:51:10.443 * Saving the final RDB snapshot before exiting.
+[3012] 21 Apr 12:51:10.443 * DB saved on disk
+[3012] 21 Apr 12:51:10.443 # Redis is now ready to exit, bye bye...
