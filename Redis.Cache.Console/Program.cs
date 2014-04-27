@@ -10,7 +10,12 @@ namespace Redis.Cache.Console
     {
         static void Main(string[] args)
         {
-            
+            DateTime dt = DateTime.Now;
+            Redis.Cache.ItemCache<DateTime> ic = new ItemCache<DateTime>("dt_1", dt);
+            ic.Save(true);
+
+            ItemCache<DateTime> dt_result = Redis.Cache.ItemCache<DateTime>.GetItem("dt_1");
+
         }
     }
 }
