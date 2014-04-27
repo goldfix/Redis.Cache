@@ -11,6 +11,11 @@ Feature
 * Support native data type (int, string, bool, single and double)...
 * ... and automatically serialization and de-serialization object.
 
+Nuget Package
+-------------
+
+Here: https://www.nuget.org/packages/Redis.Cache/
+
 Next Steps...
 -------------
 
