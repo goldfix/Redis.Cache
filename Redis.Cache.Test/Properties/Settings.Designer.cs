@@ -57,5 +57,17 @@ namespace Redis.Cache.Test.Properties {
                 return ((string)(this["Value_Text"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius, orci d" +
+            "ictum semper dignissim, sapien velit gravida sapien, nec pharetra libero tellus " +
+            "ac elit. Nullam luctus leo sit amet metus interdum, non volutpat urna malesuada." +
+            "")]
+        public string Value_Text_small {
+            get {
+                return ((string)(this["Value_Text_small"]));
+            }
+        }
     }
 }

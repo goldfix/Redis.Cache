@@ -24,11 +24,16 @@ namespace Redis.Cache.Test
         public void Get()
         {
             DateTime dt = DateTime.Now;
-            ItemCache<DateTime> ic = new ItemCache<DateTime>("DT1", dt, Utility.NO_EXPIRATION, new TimeSpan(1, 0, 0));
+            ItemCache<DateTime> ic = new ItemCache<DateTime>("DT1", dt, Utility.NO_EXPIRATION, new TimeSpan(1, 0, 0));                      //Serialization Object
             ic.Save(true);
+            ItemCache<byte[]> ic_b = new ItemCache<byte[]>("DT3", Utility.Serialize(dt), Utility.NO_EXPIRATION, new TimeSpan(1, 0, 0));     //Byte[] Object
+            ic_b.Save(true);
 
             ItemCache<DateTime> ic_2 = ItemCache<DateTime>.GetItem("DT1");
             Assert.AreEqual<DateTime>(dt, ic_2.Value);
+
+            ItemCache<byte[]> ic_b_2 = ItemCache<byte[]>.GetItem("DT3");
+            Assert.AreEqual<DateTime>(dt, ((DateTime)Utility.DeSerialize(ic_b_2.Value)));
 
             ItemCache<DateTime> ic_3 = ItemCache<DateTime>.GetItem("DT2");
             Assert.AreEqual(null, ic_3);

@@ -12,12 +12,15 @@ namespace Redis.Cache.Test
             //STRING_KEY / STRING_VALUE == DATA CACHE
             //STRING_KEY / STRING_VALUE == TTL ABS|TTL SLI.
             
-            // 239.8MB
+            // 239.8MB x 38 Sec.
+            // 128MB (compression active) x 52 Sec.
 
             for (int i = 0; i < 100001; i++)
             {
                 string k = Guid.NewGuid().ToString();
                 string v = k + " :: " + Properties.Settings.Default.Value_Text;
+                //byte[] v = Utility.Deflate(Utility.Serialize(k + " :: " + Properties.Settings.Default.Value_Text), System.IO.Compression.CompressionMode.Compress);
+
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0,0,10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
@@ -81,13 +84,15 @@ namespace Redis.Cache.Test
         {
             //LIST /    DATA == DATA CACHE
             //          TTL  == TTL ABS|TTL SLI
-            // 243.4MB
+            // 243.4MB  X 22 Sec.
+            // 132.3MB  X 45 Sec.   (with compression)
 
             
             for (int i = 0; i < 100001; i++)
             {
                 string k = Guid.NewGuid().ToString();
-                string v = k + " :: " + Properties.Settings.Default.Value_Text;
+                //string v = k + " :: " + Properties.Settings.Default.Value_Text;
+                byte[] v = Utility.Deflate(Utility.Serialize(k + " :: " + Properties.Settings.Default.Value_Text), System.IO.Compression.CompressionMode.Compress);
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
@@ -95,8 +100,7 @@ namespace Redis.Cache.Test
                 string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
 
                 Redis.Cache.RedisDal dal = new RedisDal();
-                dal.AddListItem(k, v);
-                dal.AddListItem(k, dt_TTL_ABS_str + "|" + dt_TTL_SLI_str);
+                dal.AddListItem(k, v, dt_TTL_ABS_str + "|" + dt_TTL_SLI_str);
             }
         }
 
