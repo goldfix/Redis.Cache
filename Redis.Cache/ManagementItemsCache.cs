@@ -139,6 +139,10 @@ namespace Redis.Cache
         /// <returns></returns>
         public T GetValue<T>(string key)
         {
+            if (GetItemCache<T>(key) == null)
+            {
+                return default(T);
+            }
             return GetItemCache<T>(key).Value;
         }
         public ItemCache<T> GetItemCache<T>(string key)

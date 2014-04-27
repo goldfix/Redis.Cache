@@ -113,12 +113,12 @@ namespace Redis.Cache.Test
             Assert.AreEqual<long>(result, 2);
 
             //Wait 2 sec.
-            //System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(2000);
             string result_1 = m.GetValue<String>(k);
             Assert.AreEqual<String>(result_1, "TTL_1");
 
             //Wait 6 sec.
-            //System.Threading.Thread.Sleep(10000);
+            System.Threading.Thread.Sleep(12000);
             string result_2 = m.GetValue<String>(k);
             Assert.AreEqual<String>(result_2, null);
         }
