@@ -10,7 +10,8 @@ namespace Redis.Cache.Console
     {
         static void Main(string[] args)
         {
-            
+            Redis.Cache.ItemCache<string> t = new ItemCache<string>();
+
         }
     }
 }

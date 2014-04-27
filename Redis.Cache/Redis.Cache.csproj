@@ -67,7 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exception.cs" />
+    <Compile Include="RedisCacheException.cs" />
     <Compile Include="ItemCache.cs" />
     <Compile Include="ManagementItemsCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -21,7 +21,12 @@ namespace Redis.Cache
         static Utility()
         { }
 
-
+        /// <summary>
+        /// Check and convert native type supported from Redis.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
         internal static object ConvertRedisValueToObject(StackExchange.Redis.RedisValue value, Type type)
         {
             object result = null;
@@ -59,11 +64,15 @@ namespace Redis.Cache
             }
             else
             {
-                result = Utility.DeSerialize((Byte[])value);
+                result = Utility.DeSerialize((Byte[])value);        //If not supported De-Serialize Object...
             }
             return result;
         }
-
+        /// <summary>
+        /// Check and convert native type supported from Redis.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         internal static StackExchange.Redis.RedisValue ConvertObjToRedisValue(object value)
         {
             StackExchange.Redis.RedisValue result = StackExchange.Redis.RedisValue.Null;
@@ -101,38 +110,54 @@ namespace Redis.Cache
             }
             else
             {
-                result = Utility.Serialize(value);
+                result = Utility.Serialize(value);      //If not supported Serialize Object...
             }
             return result;
         }
 
+        /// <summary>
+        /// Convert to string DateTime and TimeStamp. 
+        /// Calculate new DateTime relative to TimeStamp
+        /// </summary>
+        /// <param name="ttlSLI"></param>
+        /// <param name="ttlABS"></param>
+        /// <param name="forceUpdateDtABS"></param>
+        /// <returns></returns>
         internal static string TTLSerialize(TimeSpan ttlSLI, TimeSpan ttlABS, DateTime forceUpdateDtABS)
         {
-            DateTime dtResult = DateTime.Now.ToUniversalTime().Add(ttlSLI);
-            string str_dtSLI = dtResult.ToString("yyyyMMddTHHmmss");
-            string str_tsSLI = ttlSLI.ToString("hhmmss");
+            DateTime dtResult = DateTime.Now.ToUniversalTime().Add(ttlSLI);     //Convert to UTC and add TimeStamp to Sliding Datetime
+            string str_dtSLI = dtResult.ToString("yyyyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyyyMMddTHHmmss
+            string str_tsSLI = ttlSLI.ToString("hhmmss");                       //Convert to String. Fot TimeStamp Format is: hhmmss
+
             if (ttlSLI == Utility.NO_EXPIRATION)
             {
                 str_dtSLI = _No_TTL;
                 str_tsSLI = _No_TTL;
             }
 
-            dtResult = DateTime.Now.ToUniversalTime().Add(ttlABS);
-            string str_dtABS = dtResult.ToString("yyyyMMddTHHmmss");
-            string str_tsABS = ttlABS.ToString("hhmmss");
+            dtResult = DateTime.Now.ToUniversalTime().Add(ttlABS);              //Convert to UTC and add TimeStamp to Absolute Datetime
+            string str_dtABS = dtResult.ToString("yyyyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyyyMMddTHHmmss
+            string str_tsABS = ttlABS.ToString("hhmmss");                       //Convert to String. Fot TimeStamp Format is: hhmmss
             if (ttlABS == Utility.NO_EXPIRATION)
             {
                 str_dtABS = _No_TTL;
                 str_tsABS = _No_TTL;
             }
-            if (forceUpdateDtABS != DateTime.MaxValue)
+
+            if (forceUpdateDtABS != DateTime.MaxValue)                          //This check is necessary if update Sliding TTL (call from "Get Function"). Reset Absolute Datetime.
             {
                 str_dtABS = forceUpdateDtABS.ToString("yyyyMMddTHHmmss");
             }
-            string strResult = str_dtSLI + "|" + str_tsSLI + "|" + str_dtABS + "|" + str_tsABS;
+
+            string strResult = str_dtSLI + "|" + str_tsSLI + "|" + str_dtABS + "|" + str_tsABS;     //Concatenate string: Sliding DateTime + Sliding TTL + Absolute DateTime + Absolute TTL 
             return strResult;
         }
 
+        /// <summary>
+        /// Convert string to TimeStamp
+        /// </summary>
+        /// <param name="ttl"></param>
+        /// <returns></returns>
         internal static TimeSpan[] TTL_TS_DeSerialize(string ttl)
         {
             if (string.IsNullOrWhiteSpace(ttl))
@@ -140,17 +165,17 @@ namespace Redis.Cache
                 throw new ArgumentException("Parameter is invalid.", "ttl", null);
             }
 
-            string[] dts = ttl.Split(new char[] { '|' });
-            TimeSpan tsSLI = Utility.NO_EXPIRATION;
-            TimeSpan tsABS = Utility.NO_EXPIRATION;
+            string[] dts = ttl.Split(new char[] { '|' });               //Read and split string. Convert to Array -> Sliding DateTime | Sliding TTL | Absolute DateTime | Absolute TTL
+            TimeSpan tsSLI = Utility.NO_EXPIRATION;                     //Set Default value for Sliding TTL
+            TimeSpan tsABS = Utility.NO_EXPIRATION;                     //Set Default value for Absolute TTL
 
             if (string.Compare(dts[1], _No_TTL, true) != 0)
             {
-                tsSLI =  TimeSpan.ParseExact(dts[1], "hhmmss", null);
+                tsSLI =  TimeSpan.ParseExact(dts[1], "hhmmss", null);   //Convert to TimeStamp
             }
             if (string.Compare(dts[3], _No_TTL, true) != 0)
             {
-                tsABS = TimeSpan.ParseExact(dts[3], "hhmmss", null);
+                tsABS = TimeSpan.ParseExact(dts[3], "hhmmss", null);    //Convert to TimeStamp
             }
 
             TimeSpan[] result = new TimeSpan[2] { tsSLI, tsABS };
@@ -164,17 +189,17 @@ namespace Redis.Cache
                 throw new ArgumentException("Parameter is invalid.", "ttl", null);
             }
 
-            string[] dts = ttl.Split(new char[] { '|' });
-            DateTime dtSLI = DateTime.MaxValue;
-            DateTime dtABS = DateTime.MaxValue;
+            string[] dts = ttl.Split(new char[] { '|' });           //Read and split string. Convert to Array -> Sliding DateTime | Sliding TTL | Absolute DateTime | Absolute TTL
+            DateTime dtSLI = DateTime.MaxValue;                     //Set Default value for Sliding DateTime
+            DateTime dtABS = DateTime.MaxValue;                     //Set Default value for Absolute DateTime
 
             if (string.Compare(dts[0], _No_TTL, true) != 0)
             {
-                dtSLI = DateTime.ParseExact(dts[0], "yyyyMMddTHHmmss", null);
+                dtSLI = DateTime.ParseExact(dts[0], "yyyyMMddTHHmmss", null);       //Convert to DateTime
             }
             if (string.Compare(dts[2], _No_TTL, true) != 0)
             {
-                dtABS = DateTime.ParseExact(dts[2], "yyyyMMddTHHmmss", null);
+                dtABS = DateTime.ParseExact(dts[2], "yyyyMMddTHHmmss", null);       //Convert to DateTime
             }
 
             DateTime[] result = new DateTime[2] { dtSLI, dtABS };
@@ -182,11 +207,21 @@ namespace Redis.Cache
         }
 
         #region Check TTL_Is_Expired
+        /// <summary>
+        /// Utility function for check if Item Cache is Expired.
+        /// </summary>
+        /// <param name="ttl"></param>
+        /// <returns></returns>
         internal static bool TTL_Is_Expired(string ttl)
         {
             DateTime[] dt = Utility.TTL_DT_DeSerialize(ttl);
             return TTL_Is_Expired(dt);
         }
+        /// <summary>
+        /// Utility function for check if Item Cache is Expired.
+        /// </summary>
+        /// <param name="ttl"></param>
+        /// <returns></returns>
         internal static bool TTL_Is_Expired(DateTime[] ttl)
         {
             DateTime dtNow = DateTime.Now.ToUniversalTime();
