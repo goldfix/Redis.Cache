@@ -32,7 +32,14 @@ namespace Redis.Cache
             object result = null;
             if (typeof(Byte[]) == type)
             {
-                result = (Byte[])value;
+                if (Properties.Settings.Default.UseCompression)
+                {
+                    result = Utility.Deflate((Byte[])value, System.IO.Compression.CompressionMode.Decompress);
+                }
+                else
+                {
+                    result = (Byte[])value;
+                }
             }
             else if (typeof(String) == type)
             {
@@ -64,7 +71,15 @@ namespace Redis.Cache
             }
             else
             {
-                result = Utility.DeSerialize((Byte[])value);        //If not supported De-Serialize Object...
+                if (Properties.Settings.Default.UseCompression)
+                {
+                    byte[] tmp = Utility.Deflate((Byte[])value, System.IO.Compression.CompressionMode.Decompress);
+                    result = Utility.DeSerialize(tmp);          //If not supported De-Serialize Object...
+                }
+                else
+                {
+                    result = Utility.DeSerialize((Byte[])value);          //If not supported De-Serialize Object...
+                }
             }
             return result;
         }
@@ -77,8 +92,15 @@ namespace Redis.Cache
         {
             StackExchange.Redis.RedisValue result = StackExchange.Redis.RedisValue.Null;
             if (typeof(Byte[]) == value.GetType())
-            {
-                result = (Byte[])value;
+            {   
+                if (Properties.Settings.Default.UseCompression)
+                {
+                    result = Utility.Deflate((Byte[])value, System.IO.Compression.CompressionMode.Compress);
+                }
+                else
+                {
+                    result = (Byte[])value;
+                }
             }
             else if (typeof(String) == value.GetType())
             {
@@ -110,7 +132,15 @@ namespace Redis.Cache
             }
             else
             {
-                result = Utility.Serialize(value);      //If not supported Serialize Object...
+                if (Properties.Settings.Default.UseCompression)
+                {
+                    byte[] tmp = Utility.Serialize(value);      //If not supported Serialize Object...
+                    result = Utility.Deflate(tmp, System.IO.Compression.CompressionMode.Compress);
+                }
+                else
+                {
+                    result = Utility.Serialize(value);      //If not supported Serialize Object...
+                }
             }
             return result;
         }
@@ -233,6 +263,52 @@ namespace Redis.Cache
             {
                 return false;
             }
+        }
+        #endregion
+
+
+        #region Compress / DeCompress
+        internal static byte[] Deflate(byte[] source_byte, System.IO.Compression.CompressionMode type_deflate)
+        {
+            byte[] dest_byte = null;
+
+            using (System.IO.MemoryStream dest_mem = new System.IO.MemoryStream())
+            {
+                using (System.IO.MemoryStream source_mem = new System.IO.MemoryStream(source_byte))
+                {
+                    if (source_mem.CanSeek)
+                    {
+                        source_mem.Seek(0, System.IO.SeekOrigin.Begin);
+                    }
+
+                    if (type_deflate == System.IO.Compression.CompressionMode.Compress)
+                    {
+                        using (System.IO.Compression.DeflateStream deflate = new System.IO.Compression.DeflateStream(dest_mem, type_deflate))
+                        {
+                            source_mem.CopyTo(deflate);
+                            deflate.Flush();
+                        }
+                    }
+                    else
+                    {
+                        using (System.IO.Compression.DeflateStream deflate = new System.IO.Compression.DeflateStream(source_mem, type_deflate))
+                        {
+                            deflate.CopyTo(dest_mem);
+                            deflate.Flush();
+                        }
+                    }
+
+                    source_mem.Flush();
+                }
+                if (dest_mem.CanSeek)
+                {
+                    dest_mem.Seek(0, System.IO.SeekOrigin.Begin);
+                }
+                dest_byte = dest_mem.ToArray();
+                dest_mem.Flush();
+            }
+
+            return dest_byte;
         }
         #endregion
 

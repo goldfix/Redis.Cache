@@ -17,5 +17,8 @@
     <Setting Name="TypeStorage" Type="System.String" Scope="Application">
       <Value Profile="(Default)">UseList</Value>
     </Setting>
+    <Setting Name="UseCompression" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

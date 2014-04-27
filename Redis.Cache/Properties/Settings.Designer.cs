@@ -67,5 +67,14 @@ namespace Redis.Cache.Properties {
                 return ((string)(this["TypeStorage"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UseCompression {
+            get {
+                return ((bool)(this["UseCompression"]));
+            }
+        }
     }
 }
