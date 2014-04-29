@@ -1,4 +1,4 @@
-![Logo](https://github.com/goldfix/Redis.Cache/blob/master/_etc/ico_c.png)
+![Logo](https://raw.githubusercontent.com/goldfix/Redis.Cache/master/_etc/ico_c.png)
 
 Redis.Cache
 ===========
