@@ -17,4 +17,7 @@ Nuget Package
 
 Here: https://www.nuget.org/packages/Redis.Cache/
 
+Configuration Parameters
+------------------------
 
+[[Configuration Parameters]]
