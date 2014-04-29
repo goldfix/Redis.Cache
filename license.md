@@ -21,3 +21,4 @@ Third Party Licenses
 https://github.com/MSOpenTech/redis/blob/2.6/license.txt
 This tool is not used in the release binaries.
 * The Redis project (http://redis.io/) is independent of this client library, and is licensed separately under the three clause BSD license. The full license information can be viewed here: http://redis.io/topics/license
+* Icon Logo by raindropmemory (http://raindropmemory.deviantart.com/)
