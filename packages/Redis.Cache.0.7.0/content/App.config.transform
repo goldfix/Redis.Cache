@@ -27,6 +27,9 @@
             <setting name="TypeStorage" serializeAs="String">
                 <value>UseList</value>
             </setting>
+            <setting name="UseCompression" serializeAs="String">
+                <value>False</value>
+            </setting>
         </Redis.Cache.Properties.Settings>
     </applicationSettings>
 </configuration>
