@@ -1,3 +1,5 @@
+![Logo](https://github.com/goldfix/Redis.Cache/blob/master/_etc/ico_c.png)
+
 Redis.Cache
 ===========
 
