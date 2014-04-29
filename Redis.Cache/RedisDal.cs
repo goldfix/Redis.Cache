@@ -169,7 +169,7 @@ namespace Redis.Cache
                 if (values != null && values.Length > 0)
                 {
                     object[] results = new object[2];
-                    results[0] = Utility.ConvertRedisValueToObject(values[0], typeof(string));
+                    results[0] = (string)values[0];
                     results[1] = Utility.ConvertRedisValueToObject(values[1], type);
                     return results; 
                 }
