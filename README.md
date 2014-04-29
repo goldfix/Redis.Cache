@@ -10,14 +10,11 @@ Feature
 * Support Extending and Absolute TTL (At the same time)
 * Support native data type (int, string, bool, single and double)...
 * ... and automatically serialization and de-serialization object.
+* Support to compression.
 
 Nuget Package
 -------------
 
 Here: https://www.nuget.org/packages/Redis.Cache/
 
-Next Steps...
--------------
 
-* Support to compression.
-* Management limit number of keys.
