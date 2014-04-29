@@ -20,4 +20,4 @@ Here: https://www.nuget.org/packages/Redis.Cache/
 Configuration Parameters
 ------------------------
 
-[[Configuration Parameters]]
+https://github.com/goldfix/Redis.Cache/wiki/Configuration-Parameters
