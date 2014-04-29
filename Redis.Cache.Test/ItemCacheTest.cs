@@ -21,6 +21,14 @@ namespace Redis.Cache.Test
             Assert.AreEqual(t1.Value, test);
         }
         [TestMethod]
+        public void Add_3()
+        {
+            string test = Properties.Settings.Default.Value_Text;
+            ItemCache<string>.AddItem("k1", test, new TimeSpan(1, 2, 3), Redis.Cache.Utility.NO_EXPIRATION, true);
+            ItemCache<string> t1 = ItemCache<string>.GetItem("k1");
+            Assert.AreEqual(t1.Value, test);
+        }
+        [TestMethod]
         public void Get()
         {
             DateTime dt = DateTime.Now;

@@ -43,7 +43,15 @@ namespace Redis.Cache
             }
             else if (typeof(String) == type)
             {
-                result = (String)value;
+                if (Properties.Settings.Default.UseCompression)         //&& ((String)value).Length>512
+                {
+                    byte[] tmp = Utility.Deflate((Byte[])value, System.IO.Compression.CompressionMode.Decompress);
+                    result = System.Text.Encoding.UTF8.GetString(tmp);                   
+                }
+                else
+                {
+                    result = (String)value;
+                }
             }
             else if (typeof(Int16) == type)
             {
@@ -104,7 +112,15 @@ namespace Redis.Cache
             }
             else if (typeof(String) == value.GetType())
             {
-                result = (String)value;
+                if (Properties.Settings.Default.UseCompression)             //&& ((String)value).Length > 512
+                {
+                    byte[] tmp = System.Text.Encoding.UTF8.GetBytes((String)value);
+                    result = Utility.Deflate(tmp, System.IO.Compression.CompressionMode.Compress);
+                }
+                else
+                {
+                    result = (String)value;
+                }
             }
             else if (typeof(Int16) == value.GetType())
             {
