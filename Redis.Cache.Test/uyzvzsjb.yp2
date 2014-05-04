@@ -19,17 +19,15 @@ namespace Redis.Cache.Test
 
             byte[] tmp_compress = Utility.Deflate(tmp, System.IO.Compression.CompressionMode.Compress);
             Redis.Cache.ItemCache<byte[]>.AddItem("k_compress_byte[]", tmp_compress, true);
-
-            string s = Properties.Settings.Default.Value_Text_long;
-            byte[] str_decompress = System.Text.Encoding.UTF8.GetBytes(s);
-            byte[] str_compress = Redis.Cache.Utility.Deflate(str_decompress, System.IO.Compression.CompressionMode.Compress);
-            System.IO.File.WriteAllBytes("c:\\tmp\\out_c.bin", str_compress);
         }
 
         [TestMethod]
         public void LoadPythonDataTest()
         {
-            string s = Properties.Settings.Default.Value_Text_long;
+            string s = "Test 1234567890 Test 0987654321 Test 1234567890 Test 0987654321 Test 1234567890 Test 0987654321 メンズア";
+            //byte[] str_decompress = System.Text.Encoding.UTF8.GetBytes(s);
+            //byte[] str_compress = Redis.Cache.Utility.Deflate(str_decompress, System.IO.Compression.CompressionMode.Compress);
+            //System.IO.File.WriteAllBytes("c:\\tmp\\out_c.bin", str_compress);
 
             byte[] b = System.IO.File.ReadAllBytes("c:\\tmp\\out_p.bin");
             byte[] b_decompress = Redis.Cache.Utility.Deflate(b, System.IO.Compression.CompressionMode.Decompress);
