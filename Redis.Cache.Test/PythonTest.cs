@@ -9,7 +9,7 @@ namespace Redis.Cache.Test
         [TestMethod]
         public void InitPythonTest()
         {
-            Redis.Cache.ItemCache<string>.AddItem("k_string", "Test 1234567890 Test 0987654321 Test 1234567890 Test 0987654321 Test 1234567890 Test 0987654321 メンズア", true);
+            Redis.Cache.ItemCache<string>.AddItem("k_string", "Test 1234567890 Test 0987654321 Test 1234567890 Test 0987654321 Test 1234567890 Test 0987654321 メンズア", new TimeSpan(01, 02, 03), new TimeSpan(04, 05, 06), true);
             Redis.Cache.ItemCache<Int16>.AddItem("k_int16", 12345, true);
             Redis.Cache.ItemCache<Int32>.AddItem("k_int32", 1234567890, true);
             Redis.Cache.ItemCache<double>.AddItem("k_double", 12345.06789, true);
