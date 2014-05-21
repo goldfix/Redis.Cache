@@ -111,7 +111,7 @@ namespace Redis.Cache
             }
             if ((slidingExpiration != Utility.NO_EXPIRATION && absoluteExpiration != Utility.NO_EXPIRATION) && (slidingExpiration >= absoluteExpiration))
             {
-                throw new RedisCacheException("Sliding Expiration is greater than Absolute Expiration.", null);
+                throw new RedisCacheException("Sliding Expiration is greater or equal than Absolute Expiration.", null);
             }
 
             RedisDal dal = new RedisDal();
@@ -120,7 +120,7 @@ namespace Redis.Cache
             {
                 if (!forceOverWrite)
                 {
-                    if (Exist(key))
+                    if (dal.ItemExist(key))
                     {
                         throw new RedisCacheException("This Item Exists.", null);
                     }
@@ -131,9 +131,9 @@ namespace Redis.Cache
                 }
                 else
                 {
-                    if (Exist(key))
+                    if (dal.ItemExist(key))
                     {
-                        Delete(key);
+                        dal.ItemDelete(key);
                     }
                     else
                     {
