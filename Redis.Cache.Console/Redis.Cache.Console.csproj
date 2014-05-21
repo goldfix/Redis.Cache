@@ -48,7 +48,7 @@
     </Reference>
     <Reference Include="Redis.Cache, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Redis.Cache.0.7.0\lib\net\Redis.Cache.dll</HintPath>
+      <HintPath>..\packages\Redis.Cache.0.8.0\lib\net\Redis.Cache.dll</HintPath>
     </Reference>
     <Reference Include="StackExchange.Redis, Version=1.0.289.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
