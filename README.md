@@ -29,10 +29,10 @@ Last Version is: 0.9.0
 
 Small optimization.
 
-Important!
+*Important!*
 
-Changed serialization TTL. This version is not compatible with previous versions.
-Is necessary to empty database (used for to save cache items) and reboot your Redis Server instance.
+_Changed serialization TTL. This version is not compatible with previous versions._
+_Is necessary to empty database (used for to save cache items) and reboot your Redis Server instance._
 
 What changed?
 
