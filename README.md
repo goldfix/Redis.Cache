@@ -34,7 +34,7 @@ Small optimization.
 _Changed serialization TTL. This version is not compatible with previous versions._
 _Is necessary to empty database (used to save cache items) and reboot your Redis Server instance._
 
-* What changed?
+What changed?
 
 It is changed format serialization of TTL of items.
 
