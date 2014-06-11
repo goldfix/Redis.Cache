@@ -41,6 +41,6 @@ It is changed format serialization of TTL of items.
 Old format Serialization TTL was: hhmmss. Sample: 002000 == 20 minutes.
 New format Serialization TTL is: total seconds. Sample: 1200 == 20 minutes.
 
-* Why?
+Why?
 
 This format is shorter and more compatible between Python and C#.
