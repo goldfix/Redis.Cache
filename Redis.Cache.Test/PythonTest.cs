@@ -39,6 +39,28 @@ namespace Redis.Cache.Test
             
             Assert.AreEqual<string>(s, str_fromPython);
         }
+
+        [TestMethod]
+        public void SetToPy()
+        {
+            string test = Properties.Settings.Default.Value_Text;
+            Redis.Cache.ItemCache<string> t = new ItemCache<string>("k1", test);
+            t.Save(false);
+        }
+
+
+        [TestMethod]
+        public void GetFromPy()
+        {
+            string test = Properties.Settings.Default.Value_Text;
+            Redis.Cache.ItemCache<string> t = Redis.Cache.ItemCache<string>.GetItem("k2");
+
+            //Assert.AreEqual<string>(test.Trim(), t.Value.Trim());
+            Assert.AreEqual<TimeSpan>(t.SlidingExpiration, new TimeSpan(11, 22, 33));
+            Assert.AreEqual<TimeSpan>(t.AbsoluteExpiration, new TimeSpan(44, 55, 66));
+
+        }
+
     }
 
 

@@ -641,6 +641,11 @@
             The client name to user for all connections
             </summary>
         </member>
+        <member name="P:StackExchange.Redis.ConfigurationOptions.ConnectRetry">
+            <summary>
+            The number of times to repeat the initial connect cycle if no servers respond promptly
+            </summary>
+        </member>
         <member name="P:StackExchange.Redis.ConfigurationOptions.CommandMap">
             <summary>
             The command-map associated with this configuration
@@ -1626,6 +1631,12 @@
             <remarks>http://redis.io/commands/pexpireat</remarks>
             <remarks>http://redis.io/commands/persist</remarks>
         </member>
+        <member name="M:StackExchange.Redis.IDatabaseAsync.KeyMigrateAsync(StackExchange.Redis.RedisKey,System.Net.EndPoint,System.Int32,System.Int32,StackExchange.Redis.MigrateOptions,StackExchange.Redis.CommandFlags)">
+            <summary>
+            Atomically transfer a key from a source Redis instance to a destination Redis instance. On success the key is deleted from the original instance by default, and is guaranteed to exist in the target instance.
+            </summary>
+            <remarks>http://redis.io/commands/MIGRATE</remarks>
+        </member>
         <member name="M:StackExchange.Redis.IDatabaseAsync.KeyMoveAsync(StackExchange.Redis.RedisKey,System.Int32,StackExchange.Redis.CommandFlags)">
             <summary>
             Move key from the currently selected database (see SELECT) to the specified destination database. When key already exists in the destination database, or it does not exist in the source database, it does nothing. It is possible to use MOVE as a locking primitive because of this.
@@ -2303,6 +2314,12 @@
             Allows creation of a group of operations that will be sent to the server as a single unit,
             but which may or may not be processed on the server contiguously.
             </summary>
+        </member>
+        <member name="M:StackExchange.Redis.IDatabase.KeyMigrate(StackExchange.Redis.RedisKey,System.Net.EndPoint,System.Int32,System.Int32,StackExchange.Redis.MigrateOptions,StackExchange.Redis.CommandFlags)">
+            <summary>
+            Atomically transfer a key from a source Redis instance to a destination Redis instance. On success the key is deleted from the original instance by default, and is guaranteed to exist in the target instance.
+            </summary>
+            <remarks>http://redis.io/commands/MIGRATE</remarks>
         </member>
         <member name="M:StackExchange.Redis.IDatabase.CreateTransaction(System.Object)">
             <summary>
@@ -3748,6 +3765,26 @@
         <member name="T:StackExchange.Redis.RedisServerException">
             <summary>
             Indicates an exception raised by a redis server
+            </summary>
+        </member>
+        <member name="T:StackExchange.Redis.MigrateOptions">
+            <summary>
+            Additional options for the MIGRATE command
+            </summary>
+        </member>
+        <member name="F:StackExchange.Redis.MigrateOptions.None">
+            <summary>
+            No options specified
+            </summary>
+        </member>
+        <member name="F:StackExchange.Redis.MigrateOptions.Copy">
+            <summary>
+            Do not remove the key from the local instance.
+            </summary>
+        </member>
+        <member name="F:StackExchange.Redis.MigrateOptions.Replace">
+            <summary>
+            Replace existing key on the remote instance.
             </summary>
         </member>
         <member name="T:StackExchange.Redis.Order">

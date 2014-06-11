@@ -200,7 +200,7 @@ namespace Redis.Cache
         {
             DateTime dtResult = DateTime.Now.ToUniversalTime().Add(ttlSLI);     //Convert to UTC and add TimeStamp to Sliding Datetime
             string str_dtSLI = dtResult.ToString("yyyyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyyyMMddTHHmmss
-            string str_tsSLI = ttlSLI.ToString("hhmmss");                       //Convert to String. Fot TimeStamp Format is: hhmmss
+            string str_tsSLI = ttlSLI.TotalSeconds.ToString();                  //Convert to String. Fot TimeStamp Format is: hhmmss
 
             if (ttlSLI == Utility.NO_EXPIRATION)
             {
@@ -210,7 +210,7 @@ namespace Redis.Cache
 
             dtResult = DateTime.Now.ToUniversalTime().Add(ttlABS);              //Convert to UTC and add TimeStamp to Absolute Datetime
             string str_dtABS = dtResult.ToString("yyyyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyyyMMddTHHmmss
-            string str_tsABS = ttlABS.ToString("hhmmss");                       //Convert to String. Fot TimeStamp Format is: hhmmss
+            string str_tsABS = ttlABS.TotalSeconds.ToString();                  //Convert to String. Fot TimeStamp Format is: hhmmss
             if (ttlABS == Utility.NO_EXPIRATION)
             {
                 str_dtABS = _No_TTL;
@@ -244,11 +244,13 @@ namespace Redis.Cache
 
             if (string.Compare(dts[1], _No_TTL, true) != 0)
             {
-                tsSLI =  TimeSpan.ParseExact(dts[1], "hhmmss", null);   //Convert to TimeStamp
+                //tsSLI =  TimeSpan.ParseExact(dts[1], "hhmmss", null);   //Convert to TimeStamp
+                tsSLI = TimeSpan.FromSeconds(Convert.ToInt32(dts[1]));
             }
             if (string.Compare(dts[3], _No_TTL, true) != 0)
             {
-                tsABS = TimeSpan.ParseExact(dts[3], "hhmmss", null);    //Convert to TimeStamp
+                //tsABS = TimeSpan.ParseExact(dts[3], "hhmmss", null);    //Convert to TimeStamp
+                tsABS = TimeSpan.FromSeconds(Convert.ToInt32(dts[3]));
             }
 
             TimeSpan[] result = new TimeSpan[2] { tsSLI, tsABS };
