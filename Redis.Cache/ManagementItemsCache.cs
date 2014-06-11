@@ -166,6 +166,11 @@ namespace Redis.Cache
         /// <returns></returns>
         public T GetValue<T>(string key)
         {
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentException("Parameter is invalid.", "key", null);
+            }
+
             ItemCache<T> result = GetItemCache<T>(key);
             if (result == null)
             {
