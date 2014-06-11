@@ -43,3 +43,7 @@ It is changed format serialization of TTL of items.
 Why?
 
 This format is shorter and more compatible between Python and C#.
+
+Where?
+
+Here: https://github.com/goldfix/Redis.Cache/releases
