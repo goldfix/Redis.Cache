@@ -31,14 +31,14 @@ Small optimization.
 
 *Important!*
 
-_Changed serialization TTL. This version is not compatible with previous versions. Is necessary to empty database (used to save cache items) and reboot your Redis Server instance._
+_Changed TTL serialization. This version is not compatible with previous versions. Is necessary to empty database (used to save cache items) and reboot your Redis Server instance._
 
 **What?**
 
-It is changed format serialization of TTL of items.
+It is changed format TTL serialization of items.
 
-* Old format Serialization TTL was: hhmmss. Sample: 002000 == 20 minutes.
-* New format Serialization TTL is: total seconds. Sample: 1200 == 20 minutes.
+* Old format TTL serialization was: hhmmss. Sample: 002000 == 20 minutes.
+* New format TTL serialization is: total seconds. Sample: 1200 == 20 minutes.
 
 **Why?**
 
