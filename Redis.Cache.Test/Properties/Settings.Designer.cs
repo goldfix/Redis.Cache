@@ -207,7 +207,13 @@ namespace Redis.Cache.Test.Properties {
             "non nisi congue rhoncus eget sit amet est. Curabitur urna turpis, semper vitae p" +
             "osuere eu, feugiat vitae risus. Fusce scelerisque, dolor ut tempus posuere, nunc" +
             " risus elementum sem, in porttitor turpis metus nec est.\r\n\r\nTest 0987654321 メンズア" +
-            "\r\n<END>\r\n")]
+            "\r\n\r\nترسبت الطبقات الأولى بالمنطقة حين اجتاحتها مياه بحر ضحل في العصر البرمي، ممَ" +
+            "ّا أدى إلى ترسب الحجر الرملي أولاً، ومن ثم ترسب الحجر الكلسي في الأماكن الأكثر ع" +
+            "مقًا. أما بعد انحسار المياه في العصر الترياسي، رسبت التيارات الغرين قبيل ارتفاع " +
+            "المنطقة وتعرضها للتعرية. ثم ترسب بعد ذلك الرصيص (صخور الرواهص) متبوعًا بالأخشاب " +
+            "والرمال والطين ورماد البراكين الذي نقلته الرياح. شهد العصر الترياسي بداية من منت" +
+            "صفه إلى أواخره جفافًا شديدًا متزايدًا، ترسبت من خلاله كميات كبيرة من الحجر \r\n\r\n<" +
+            "END>\r\n")]
         public string Value_Text_long {
             get {
                 return ((string)(this["Value_Text_long"]));

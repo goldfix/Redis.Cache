@@ -61,8 +61,16 @@ namespace Redis.Cache.Test
 
         }
 
+
+        [TestMethod]
+        public void GetFromPy_2()
+        {
+            string test = Properties.Settings.Default.Value_Text_long;
+            Redis.Cache.ItemCache<string> t = Redis.Cache.ItemCache<string>.GetItem("K3");
+
+            Assert.AreEqual<string>(test, t.Value);
+            Assert.AreEqual<TimeSpan>(t.SlidingExpiration, new TimeSpan(4, 5, 6));
+            Assert.AreEqual<TimeSpan>(t.AbsoluteExpiration, new TimeSpan(5, 6, 7));
+        }
     }
-
-
-
 }
