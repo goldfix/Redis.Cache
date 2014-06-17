@@ -45,6 +45,14 @@ namespace Redis.Cache
             UseHash=3
         }
 
+        [Flags]
+        public enum StatusItem : short
+        {
+            None=0,
+            Compressed=1,
+            Serialized=2
+        }
+
         static Utility()
         { }
 
