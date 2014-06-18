@@ -51,8 +51,8 @@ namespace Redis.Cache.Test
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0,0,10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
-                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
-                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyMMddTHHmmss");
+                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyMMddTHHmmss");
 
                 Redis.Cache.RedisDal dal = new RedisDal();
                 dal.AddItem("DATA_" + k, v); // add data
@@ -74,8 +74,8 @@ namespace Redis.Cache.Test
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
-                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
-                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyMMddTHHmmss");
+                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyMMddTHHmmss");
 
                 Redis.Cache.RedisDal dal = new RedisDal();
                 dal.AddItem(k, dt_TTL_ABS_str + "|" + dt_TTL_SLI_str + "|" + v); // add data with TTL
@@ -96,8 +96,8 @@ namespace Redis.Cache.Test
         //        DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
         //        DateTimeOffset dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
-        //        string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
-        //        string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+        //        string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyMMddTHHmmss");
+        //        string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyMMddTHHmmss");
 
         //        Redis.Cache.RedisDal dal = new RedisDal();
         //        dal.AddSetItem(k, v);
@@ -123,8 +123,8 @@ namespace Redis.Cache.Test
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
-                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
-                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyMMddTHHmmss");
+                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyMMddTHHmmss");
 
                 Redis.Cache.RedisDal dal = new RedisDal();
                 dal.AddListItem(k, v, dt_TTL_ABS_str + "|" + dt_TTL_SLI_str);
@@ -148,8 +148,8 @@ namespace Redis.Cache.Test
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
-                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
-                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyMMddTHHmmss");
+                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyMMddTHHmmss");
 
                 Redis.Cache.RedisDal dal = new RedisDal();
                 dal.AddHashItem(k_hash, "DATA_" + k, v);
@@ -164,8 +164,8 @@ namespace Redis.Cache.Test
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
-                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
-                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyMMddTHHmmss");
+                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyMMddTHHmmss");
 
                 Redis.Cache.RedisDal dal = new RedisDal();
                 dal.AddHashItem(k_hash, "DATA_" + k, v);
@@ -189,8 +189,8 @@ namespace Redis.Cache.Test
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
-                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
-                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyMMddTHHmmss");
+                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyMMddTHHmmss");
 
                 Redis.Cache.RedisDal dal = new RedisDal();
                 dal.AddHashItem(k, "DATA", v);
@@ -222,8 +222,8 @@ namespace Redis.Cache.Test
                 DateTime dt_TTL_ABS = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 10));
                 DateTime dt_TTL_SLI = DateTime.Now.ToUniversalTime().Add(new TimeSpan(0, 0, 5));
 
-                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyyyMMddTHHmmss");
-                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyyyMMddTHHmmss");
+                string dt_TTL_ABS_str = dt_TTL_ABS.ToString("yyMMddTHHmmss");
+                string dt_TTL_SLI_str = dt_TTL_SLI.ToString("yyMMddTHHmmss");
 
                 Redis.Cache.RedisDal dal = new RedisDal();
                 dal.AddHashItem(k_hash.ToString(), "DATA_" + k, v);

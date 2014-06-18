@@ -189,7 +189,7 @@ namespace Redis.Cache
             }
 
             RedisDal dal = new RedisDal();
-            object[] results = dal.GetListItem(key, typeof(T));
+            object[] results = dal.GetListItem<T>(key);
 
             if (results != null && results.Length > 0)
             {

@@ -171,9 +171,11 @@ namespace Redis.Cache
 
             try
             {
+                Utility.StatusItem statusItem = Utility.StatusItem.None;
                 StackExchange.Redis.RedisValue[] _v = new StackExchange.Redis.RedisValue[2];
                 _v[0] = value_ttl;
-                _v[1] = Utility.ConvertObjToRedisValue(value);
+                _v[1] = Utility.ConvertObjToRedisValue(value, out statusItem);
+                _v[0] = _v[0] + "|" + Convert.ToInt16(statusItem).ToString();
                 return _db.ListRightPush(key, _v);
             }
             catch (Exception)
@@ -183,7 +185,7 @@ namespace Redis.Cache
             finally
             { }
         }
-        public object[] GetListItem(string key, Type type)
+        public object[] GetListItem<T>(string key)
         {
             if (string.IsNullOrWhiteSpace(key))
             {
@@ -197,7 +199,8 @@ namespace Redis.Cache
                 {
                     object[] results = new object[2];
                     results[0] = (string)values[0];
-                    results[1] = Utility.ConvertRedisValueToObject(values[1], type);
+                    Utility.StatusItem statusItem = Utility.StatusItemDeSerialize((string)results[0]);
+                    results[1] = Utility.ConvertRedisValueToObject(values[1], typeof(T), statusItem);
                     return results; 
                 }
                 else

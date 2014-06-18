@@ -34,7 +34,7 @@ namespace Redis.Cache
 {
     public static class Utility
     {
-        private readonly static string _No_TTL = "ND";     // new DateTime(1985, 10, 26, 06, 0, 0).ToString("yyyyMMddTHHmmss");
+        private readonly static string _No_TTL = "ND";     // new DateTime(1985, 10, 26, 06, 0, 0).ToString("yyMMddTHHmmss");
 
         public static readonly TimeSpan NO_EXPIRATION = TimeSpan.Zero;
 
@@ -62,23 +62,13 @@ namespace Redis.Cache
         /// <param name="value"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        internal static object ConvertRedisValueToObject(StackExchange.Redis.RedisValue value, Type type)
+        internal static object ConvertRedisValueToObject(StackExchange.Redis.RedisValue value, Type type, StatusItem statusItem)
         {
             object result = null;
-            if (typeof(Byte[]) == type)
+
+            if (typeof(String) == type)
             {
-                if (Properties.Settings.Default.UseCompression)
-                {
-                    result = Utility.Deflate((Byte[])value, System.IO.Compression.CompressionMode.Decompress);
-                }
-                else
-                {
-                    result = (Byte[])value;
-                }
-            }
-            else if (typeof(String) == type)
-            {
-                if (Properties.Settings.Default.UseCompression)         //&& ((String)value).Length>512
+                if ((statusItem & StatusItem.Compressed) == StatusItem.Compressed)
                 {
                     byte[] tmp = Utility.Deflate((Byte[])value, System.IO.Compression.CompressionMode.Decompress);
                     result = System.Text.Encoding.UTF8.GetString(tmp);                   
@@ -114,16 +104,22 @@ namespace Redis.Cache
             }
             else
             {
-                if (Properties.Settings.Default.UseCompression)
+                result = (Byte[])value;
+                if ((statusItem & StatusItem.Compressed) == StatusItem.Compressed)
                 {
-                    byte[] tmp = Utility.Deflate((Byte[])value, System.IO.Compression.CompressionMode.Decompress);
-                    result = Utility.DeSerialize(tmp);          //If not supported De-Serialize Object...
+                    result = Utility.Deflate((Byte[])result, System.IO.Compression.CompressionMode.Decompress);
+                }
+                else if ((statusItem & StatusItem.Serialized) == StatusItem.Serialized)
+                {
+                    result = Utility.DeSerialize((Byte[])result);          //If not supported De-Serialize Object...
                 }
                 else
                 {
-                    result = Utility.DeSerialize((Byte[])value);          //If not supported De-Serialize Object...
+                    //result = (Byte[])value;
+                    //continue...
                 }
             }
+
             return result;
         }
         /// <summary>
@@ -131,14 +127,17 @@ namespace Redis.Cache
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        internal static StackExchange.Redis.RedisValue ConvertObjToRedisValue(object value)
+        internal static StackExchange.Redis.RedisValue ConvertObjToRedisValue(object value, out StatusItem statusItem)
         {
+            statusItem = StatusItem.None;
             StackExchange.Redis.RedisValue result = StackExchange.Redis.RedisValue.Null;
+
             if (typeof(Byte[]) == value.GetType())
             {   
                 if (Properties.Settings.Default.UseCompression)
                 {
                     result = Utility.Deflate((Byte[])value, System.IO.Compression.CompressionMode.Compress);
+                    statusItem = StatusItem.Compressed;
                 }
                 else
                 {
@@ -151,6 +150,7 @@ namespace Redis.Cache
                 {
                     byte[] tmp = System.Text.Encoding.UTF8.GetBytes((String)value);
                     result = Utility.Deflate(tmp, System.IO.Compression.CompressionMode.Compress);
+                    statusItem = StatusItem.Compressed;
                 }
                 else
                 {
@@ -187,12 +187,21 @@ namespace Redis.Cache
                 {
                     byte[] tmp = Utility.Serialize(value);      //If not supported Serialize Object...
                     result = Utility.Deflate(tmp, System.IO.Compression.CompressionMode.Compress);
+                    statusItem = StatusItem.Compressed | StatusItem.Serialized;
                 }
                 else
                 {
                     result = Utility.Serialize(value);      //If not supported Serialize Object...
+                    statusItem = StatusItem.Serialized;
                 }
             }
+            return result;
+        }
+
+        internal static StatusItem StatusItemDeSerialize(string v)
+        {
+            string r = ((string)v).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries)[4];
+            StatusItem result = (StatusItem)Enum.Parse(typeof(StatusItem), r, true);
             return result;
         }
 
@@ -207,7 +216,7 @@ namespace Redis.Cache
         internal static string TTLSerialize(TimeSpan ttlSLI, TimeSpan ttlABS, DateTime forceUpdateDtABS)
         {
             DateTime dtResult = DateTime.Now.ToUniversalTime().Add(ttlSLI);     //Convert to UTC and add TimeStamp to Sliding Datetime
-            string str_dtSLI = dtResult.ToString("yyyyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyyyMMddTHHmmss
+            string str_dtSLI = dtResult.ToString("yyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyMMddTHHmmss
             string str_tsSLI = ttlSLI.TotalSeconds.ToString();                  //Convert to String. Fot TimeStamp Format is: hhmmss
 
             if (ttlSLI == Utility.NO_EXPIRATION)
@@ -217,7 +226,7 @@ namespace Redis.Cache
             }
 
             dtResult = DateTime.Now.ToUniversalTime().Add(ttlABS);              //Convert to UTC and add TimeStamp to Absolute Datetime
-            string str_dtABS = dtResult.ToString("yyyyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyyyMMddTHHmmss
+            string str_dtABS = dtResult.ToString("yyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyMMddTHHmmss
             string str_tsABS = ttlABS.TotalSeconds.ToString();                  //Convert to String. Fot TimeStamp Format is: hhmmss
             if (ttlABS == Utility.NO_EXPIRATION)
             {
@@ -227,7 +236,7 @@ namespace Redis.Cache
 
             if (forceUpdateDtABS != DateTime.MaxValue)                          //This check is necessary if update Sliding TTL (call from "Get Function"). Reset Absolute Datetime.
             {
-                str_dtABS = forceUpdateDtABS.ToString("yyyyMMddTHHmmss");
+                str_dtABS = forceUpdateDtABS.ToString("yyMMddTHHmmss");
             }
 
             string strResult = str_dtSLI + "|" + str_tsSLI + "|" + str_dtABS + "|" + str_tsABS;     //Concatenate string: Sliding DateTime + Sliding TTL + Absolute DateTime + Absolute TTL 
@@ -278,11 +287,11 @@ namespace Redis.Cache
 
             if (string.Compare(dts[0], _No_TTL, true) != 0)
             {
-                dtSLI = DateTime.ParseExact(dts[0], "yyyyMMddTHHmmss", null);       //Convert to DateTime
+                dtSLI = DateTime.ParseExact(dts[0], "yyMMddTHHmmss", null);       //Convert to DateTime
             }
             if (string.Compare(dts[2], _No_TTL, true) != 0)
             {
-                dtABS = DateTime.ParseExact(dts[2], "yyyyMMddTHHmmss", null);       //Convert to DateTime
+                dtABS = DateTime.ParseExact(dts[2], "yyMMddTHHmmss", null);       //Convert to DateTime
             }
 
             DateTime[] result = new DateTime[2] { dtSLI, dtABS };
