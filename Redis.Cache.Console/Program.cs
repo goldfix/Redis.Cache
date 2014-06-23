@@ -41,6 +41,7 @@ namespace Redis.Cache.Console
             Redis.Cache.ItemCache<DateTime> ic = new ItemCache<DateTime>("dt_1", dt);
             ic.Save(true);
 
+
             ItemCache<DateTime> dt_result = Redis.Cache.ItemCache<DateTime>.GetItem("dt_1");
 
             System.Console.WriteLine((dt == dt_result.Value).ToString());
