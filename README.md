@@ -39,7 +39,6 @@ It is changed format TTL serialization of items.
 
 * Old format TTL serialization was: hhmmss. Sample: 002000 == 20 minutes.
 * New format TTL serialization is: total seconds. Sample: 1200 == 20 minutes.
-
 * Old format Date/Time serialization was: yyyyMMddThhmmss. Sample: 20140120T010203
 * New format Date/Time serialization was: yyMMddThhmmss. Sample: 140120T010203
 
