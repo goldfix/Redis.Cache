@@ -109,7 +109,6 @@ namespace Redis.Cache
                 {
                     result = Utility.Deflate((Byte[])result, System.IO.Compression.CompressionMode.Decompress);
                 }
-                
                 if ((statusItem & StatusItem.Serialized) == StatusItem.Serialized)
                 {
                     result = Utility.DeSerialize((Byte[])result);          //If not supported De-Serialize Object...

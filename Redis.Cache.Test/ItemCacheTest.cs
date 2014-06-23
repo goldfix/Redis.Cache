@@ -34,55 +34,124 @@ namespace Redis.Cache.Test
     public class ItemCacheTest
     {
         [TestMethod]
-        public void Add()
+        public void Add_Datetime()
         {
-            ItemCache<DateTime> ic = new ItemCache<DateTime>("DT1", DateTime.Now, Utility.NO_EXPIRATION, Utility.NO_EXPIRATION);
-            ic.Save(true);   
+            DateTime dt_1 = DateTime.Now;
+            ItemCache<DateTime> ic_1 = new ItemCache<DateTime>();
+            ic_1.Key = "Add_Datetime";
+            ic_1.Value = dt_1;
+            ic_1.Save(true);
+
+            ItemCache<DateTime> ic_2 = ItemCache<DateTime>.GetItem("Add_Datetime");
+            Assert.AreEqual<DateTime>(dt_1, ic_2.Value);
         }
         [TestMethod]
-        public void Add_2()
+        public void Add_String()
         {
-            string test = DateTime.Now.ToString();
-            ItemCache<string>.AddItem("k1", test, new TimeSpan(1, 2, 3), Redis.Cache.Utility.NO_EXPIRATION, true);
-            ItemCache<string> t1 = ItemCache<string>.GetItem("k1");
-            Assert.AreEqual(t1.Value, test);
+            string obj_1 = Properties.Settings.Default.Value_Text_long;
+            ItemCache<string> ic_1 = new ItemCache<string>();
+            ic_1.Key = "Add_String";
+            ic_1.Value = obj_1;
+            ic_1.Save(true);
+
+            ItemCache<string> ic_2 = ItemCache<string>.GetItem("Add_String");
+            Assert.AreEqual<string>(obj_1, ic_2.Value);
         }
         [TestMethod]
-        public void Add_3()
+        public void Add_Datetime_TTLSli()
         {
-            string test = Properties.Settings.Default.Value_Text;
-            ItemCache<string>.AddItem("k1", test, new TimeSpan(1, 2, 3), Redis.Cache.Utility.NO_EXPIRATION, true);
-            ItemCache<string> t1 = ItemCache<string>.GetItem("k1");
-            Assert.AreEqual(t1.Value, test);
+            DateTime dt_1 = DateTime.Now;
+            ItemCache<DateTime> ic_1 = new ItemCache<DateTime>();
+            ic_1.Key = "Add_Datetime_TTLSli";
+            ic_1.Value = dt_1;
+            ic_1.SlidingExpiration = new TimeSpan(0, 0, 20);
+            ic_1.Save(true);
+
+            System.Threading.Thread.Sleep(5000);
+            ItemCache<DateTime> ic_2 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLSli");
+            Assert.AreEqual<DateTime>(dt_1, ic_2.Value);
+
+            System.Threading.Thread.Sleep(20000);
+            ItemCache<DateTime> ic_3 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLSli");
+            Assert.AreEqual(ic_3, null);
         }
         [TestMethod]
-        public void Get()
+        public void Add_Datetime_TTLAbs()
         {
-            DateTime dt = DateTime.Now;
-            ItemCache<DateTime> ic = new ItemCache<DateTime>("DT1", dt, Utility.NO_EXPIRATION, new TimeSpan(1, 0, 0));                      //Serialization Object
-            ic.Save(true);
-            ItemCache<byte[]> ic_b = new ItemCache<byte[]>("DT3", Utility.Serialize(dt), Utility.NO_EXPIRATION, new TimeSpan(1, 0, 0));     //Byte[] Object
-            ic_b.Save(true);
+            DateTime dt_1 = DateTime.Now;
+            ItemCache<DateTime> ic_1 = new ItemCache<DateTime>();
+            ic_1.Key = "Add_Datetime_TTLAbs";
+            ic_1.Value = dt_1;
+            ic_1.AbsoluteExpiration = new TimeSpan(0, 0, 20);
+            ic_1.Save(true);
 
-            ItemCache<DateTime> ic_2 = ItemCache<DateTime>.GetItem("DT1");
-            Assert.AreEqual<DateTime>(dt, ic_2.Value);
+            System.Threading.Thread.Sleep(5000);
+            ItemCache<DateTime> ic_2 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLAbs");
+            Assert.AreEqual<DateTime>(dt_1, ic_2.Value);
 
-            ItemCache<byte[]> ic_b_2 = ItemCache<byte[]>.GetItem("DT3");
-            Assert.AreEqual<DateTime>(dt, ((DateTime)Utility.DeSerialize(ic_b_2.Value)));
-
-            ItemCache<DateTime> ic_3 = ItemCache<DateTime>.GetItem("DT2");
-            Assert.AreEqual(null, ic_3);
+            System.Threading.Thread.Sleep(20000);
+            ItemCache<DateTime> ic_3 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLAbs");
+            Assert.AreEqual(ic_3, null);
         }
         [TestMethod]
-        public void Delete()
+        public void Add_Datetime_TTLAbsSli()
         {
-            DateTime dt = new DateTime(2012, 02, 01);
-            ItemCache<DateTime> ic = new ItemCache<DateTime>("DT2", dt, Utility.NO_EXPIRATION, Utility.NO_EXPIRATION);
-            ic.Save(true);
+            DateTime dt_1 = DateTime.Now;
+            ItemCache<DateTime> ic_1 = new ItemCache<DateTime>();
+            ic_1.Key = "Add_Datetime_TTLAbsSli";
+            ic_1.Value = dt_1;
+            ic_1.SlidingExpiration = new TimeSpan(0, 0, 10);
+            ic_1.AbsoluteExpiration = new TimeSpan(0, 0, 25);
+            ic_1.Save(true);
 
-            ItemCache<DateTime>.DeleteItem("DT2");
-            ItemCache<DateTime> test = ItemCache<DateTime>.GetItem("DT2");
-            Assert.AreEqual(test, null);
+            System.Threading.Thread.Sleep(5000);
+            ItemCache<DateTime> ic_2 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLAbsSli");
+            Assert.AreEqual<DateTime>(dt_1, ic_2.Value);
+
+            System.Threading.Thread.Sleep(5000);
+            ItemCache<DateTime> ic_3 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLAbsSli");
+            Assert.AreEqual<DateTime>(dt_1, ic_3.Value);
+
+            System.Threading.Thread.Sleep(10000);
+            ItemCache<DateTime> ic_4 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLAbsSli");
+            Assert.AreEqual(ic_4, null);
         }
+
+        [TestMethod]
+        public void Add_Datetime_TTLAbsSli_Delete()
+        {
+            DateTime dt_1 = DateTime.Now;
+            ItemCache<DateTime> ic_1 = new ItemCache<DateTime>();
+            ic_1.Key = "Add_Datetime_TTLAbsSli_Delete";
+            ic_1.Value = dt_1;
+            ic_1.SlidingExpiration = new TimeSpan(0, 0, 10);
+            ic_1.AbsoluteExpiration = new TimeSpan(0, 0, 25);
+            ic_1.Save(true);
+
+            System.Threading.Thread.Sleep(8000);
+            ItemCache<DateTime> ic_2 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLAbsSli_Delete");
+            Assert.AreEqual<DateTime>(dt_1, ic_2.Value);
+
+            ItemCache<DateTime>.DeleteItem("Add_Datetime_TTLAbsSli_Delete");
+            ItemCache<DateTime> ic_3 = ItemCache<DateTime>.GetItem("Add_Datetime_TTLAbsSli_Delete");
+            Assert.AreEqual(ic_3, null);
+        }
+
+        [TestMethod]
+        public void Add_Datetime_TTLAbsSli_Exist()
+        {
+            DateTime dt_1 = DateTime.Now;
+            ItemCache<DateTime> ic_1 = new ItemCache<DateTime>();
+            ic_1.Key = "Add_Datetime_TTLAbsSli_Exist";
+            ic_1.Value = dt_1;
+            ic_1.SlidingExpiration = new TimeSpan(0, 0, 10);
+            ic_1.AbsoluteExpiration = new TimeSpan(0, 0, 25);
+            ic_1.Save(true);
+
+            System.Threading.Thread.Sleep(5000);
+            Assert.AreEqual(true, ItemCache<DateTime>.ExistItem("Add_Datetime_TTLAbsSli_Exist"));
+        }
+
+
     }
 }
