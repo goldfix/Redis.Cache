@@ -140,7 +140,6 @@ namespace Redis.Cache
                     }
                 }
 
-
                 ItemCacheInfo<T> itemCacheInfo = new ItemCacheInfo<T>();
                 itemCacheInfo.Data = value;
                 itemCacheInfo.AbsoluteExpiration_TS = absoluteExpiration;
@@ -200,8 +199,9 @@ namespace Redis.Cache
             if (results != null && results.Length > 1)
             {
                 ItemCacheInfo<T> itemCacheInfo = new ItemCacheInfo<T>();
-                itemCacheInfo.Serialized_Data = results[1];
                 itemCacheInfo.Serialized_TTL = (string)results[0];
+                itemCacheInfo.Serialized_Data = results[1];
+                itemCacheInfo.DeSerializeInfo();
 
                 if (Utility.TTL_Is_Expired(itemCacheInfo.SlidingExpiration_DT, itemCacheInfo.AbsoluteExpiration_DT))
                 {
@@ -213,7 +213,7 @@ namespace Redis.Cache
                     //Update SLI TTL on Redis...
                     if (itemCacheInfo.SlidingExpiration_DT != DateTime.MaxValue)
                     {
-                        string ttl = Utility.TTLSerialize(itemCacheInfo.SlidingExpiration_TS, itemCacheInfo.AbsoluteExpiration_TS, itemCacheInfo.AbsoluteExpiration_DT);
+                        string ttl = Utility.TTLSerialize(itemCacheInfo.SlidingExpiration_TS, itemCacheInfo.AbsoluteExpiration_TS, itemCacheInfo.AbsoluteExpiration_DT, itemCacheInfo.StatusItem);
                         dal.UpdateTTL_Item(key, ttl);
                         dal.SetTTL(key, itemCacheInfo.SlidingExpiration_TS);
                     }

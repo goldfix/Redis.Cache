@@ -213,7 +213,7 @@ namespace Redis.Cache
         /// <param name="ttlABS"></param>
         /// <param name="forceUpdateDtABS"></param>
         /// <returns></returns>
-        internal static string TTLSerialize(TimeSpan ttlSLI, TimeSpan ttlABS, DateTime forceUpdateDtABS)
+        internal static string TTLSerialize(TimeSpan ttlSLI, TimeSpan ttlABS, DateTime forceUpdateDtABS, Utility.StatusItem statusItem)
         {
             DateTime dtResult = DateTime.Now.ToUniversalTime().Add(ttlSLI);     //Convert to UTC and add TimeStamp to Sliding Datetime
             string str_dtSLI = dtResult.ToString("yyMMddTHHmmss");            //Convert to String. For Datetime Format is: yyMMddTHHmmss
@@ -239,7 +239,7 @@ namespace Redis.Cache
                 str_dtABS = forceUpdateDtABS.ToString("yyMMddTHHmmss");
             }
 
-            string strResult = str_dtSLI + "|" + str_tsSLI + "|" + str_dtABS + "|" + str_tsABS;     //Concatenate string: Sliding DateTime + Sliding TTL + Absolute DateTime + Absolute TTL 
+            string strResult = str_dtSLI + "|" + str_tsSLI + "|" + str_dtABS + "|" + str_tsABS + "|" + Convert.ToInt32(statusItem);     //Concatenate string: Sliding DateTime + Sliding TTL + Absolute DateTime + Absolute TTL 
             return strResult;
         }
 

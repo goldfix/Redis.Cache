@@ -3,41 +3,48 @@
   <Class Name="Redis.Cache.ManagementItemsCache">
     <Position X="1.75" Y="1" Width="4.75" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAABCACAABAAAIAAAAAAAAQAAAAEAgAA=</HashCode>
+      <HashCode>AAIAAAEAIAAAAAACADAAAAAAIAEAAAAAAQAAAAEAgAA=</HashCode>
       <FileName>ManagementItemsCache.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Redis.Cache.ItemsCache&lt;T&gt;">
+  <Class Name="Redis.Cache.ItemCache&lt;T&gt;">
     <Position X="7" Y="1" Width="5.25" />
     <TypeIdentifier>
-      <HashCode>AAAAgIACAACACFQAARAAAAgAgAEAAAAAAABgAAAAAAA=</HashCode>
-      <FileName>ItemsCache.cs</FileName>
+      <HashCode>AAAAAIACAACACFQAARAAAAgAgAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>ItemCache.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Redis.Cache.RedisDal">
     <Position X="1.75" Y="4.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAABIAA=</HashCode>
+      <HashCode>AAAAgAAAIABACAAAAAAAAQEAgQAAEAAAAAAAAAABIAA=</HashCode>
       <FileName>RedisDal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Redis.Cache.Utility">
     <Position X="7" Y="5.5" Width="3.75" />
     <NestedTypes>
-      <Enum Name="Redis.Cache.Utility.NoExpiration" Collapsed="true">
+      <Enum Name="Redis.Cache.Utility.TypeStorage" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Utility.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
-      <Enum Name="Redis.Cache.Utility.TypeStorage" Collapsed="true">
+      <Enum Name="Redis.Cache.Utility.StatusItem" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Utility.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAACBAAAAAABgAAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAACAAAAAABBAEAAACCBAAAggABCAAAAAAAA=</HashCode>
       <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Redis.Cache.ItemCacheInfo&lt;T&gt;">
+    <Position X="11.25" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>gEAAAgQAICAAAQAAAAIAAIAAAAAAABAAAAAAAAAAQAA=</HashCode>
+      <FileName>ItemCacheInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Tahoma" Size="8.25" />
