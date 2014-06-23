@@ -136,16 +136,16 @@ namespace Redis.Cache.Test
             Redis.Cache.ManagementItemsCache m = new Cache.ManagementItemsCache();
 
             string k = Guid.NewGuid().ToString();
-            long result = m.Add<string>(k, "TTL_1", new TimeSpan(0, 0, 5), new TimeSpan(0, 0, 10), true);
+            long result = m.Add<string>(k, "TTL_1", new TimeSpan(0, 0, 10), new TimeSpan(0, 0, 20), true);
             Assert.AreEqual<long>(result, 2);
 
             //Wait 2 sec.
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(8000);
             string result_1 = m.GetValue<String>(k);
             Assert.AreEqual<String>(result_1, "TTL_1");
 
             //Wait 6 sec.
-            System.Threading.Thread.Sleep(12000);
+            System.Threading.Thread.Sleep(20000);
             string result_2 = m.GetValue<String>(k);
             Assert.AreEqual<String>(result_2, null);
         }
