@@ -118,26 +118,8 @@ namespace Redis.Cache
         }
 
         #region List Methods
-        public long AddListItem(string key, string value)
-        {
-            if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentException("Parameter is invalid.", "key or value", null);
-            }
 
-            try
-            {
-                long result = _db.ListRightPush(key, new StackExchange.Redis.RedisValue[] { value });
-                return result;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            { }
-        }
-        public long UpdateTTL_ListItem(string key, string ttl)
+        public long UpdateTTL_Item(string key, string ttl)
         {
             if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(ttl))
             {
@@ -158,24 +140,23 @@ namespace Redis.Cache
             finally
             { }
         }
-        public long AddListItem(string key, object value, string value_ttl)
+
+        public long AddListItem(string key, StackExchange.Redis.RedisValue value, string value_ttl)
         {
             if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(value_ttl))
             {
                 throw new ArgumentException("Parameter is invalid.", "key or value_ttl", null);
             }
-            if (value == null)
+            if (value == StackExchange.Redis.RedisValue.Null || value == StackExchange.Redis.RedisValue.EmptyString)
             {
                 throw new ArgumentException("Parameter is invalid.", "value", null);
             }
 
             try
             {
-                Utility.StatusItem statusItem = Utility.StatusItem.None;
                 StackExchange.Redis.RedisValue[] _v = new StackExchange.Redis.RedisValue[2];
                 _v[0] = value_ttl;
-                _v[1] = Utility.ConvertObjToRedisValue(value, out statusItem);
-                _v[0] = _v[0] + "|" + Convert.ToInt16(statusItem).ToString();
+                _v[1] = value;
                 return _db.ListRightPush(key, _v);
             }
             catch (Exception)
@@ -185,7 +166,8 @@ namespace Redis.Cache
             finally
             { }
         }
-        public object[] GetListItem<T>(string key)
+
+        public StackExchange.Redis.RedisValue[] GetListItem<T>(string key)
         {
             if (string.IsNullOrWhiteSpace(key))
             {
@@ -197,11 +179,7 @@ namespace Redis.Cache
                 StackExchange.Redis.RedisValue[] values = _db.ListRange(key, 0, 1);
                 if (values != null && values.Length > 0)
                 {
-                    object[] results = new object[2];
-                    results[0] = (string)values[0];
-                    Utility.StatusItem statusItem = Utility.StatusItemDeSerialize((string)results[0]);
-                    results[1] = Utility.ConvertRedisValueToObject(values[1], typeof(T), statusItem);
-                    return results; 
+                    return values;
                 }
                 else
                 {

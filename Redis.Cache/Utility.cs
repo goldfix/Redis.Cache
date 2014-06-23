@@ -304,20 +304,10 @@ namespace Redis.Cache
         /// </summary>
         /// <param name="ttl"></param>
         /// <returns></returns>
-        internal static bool TTL_Is_Expired(string ttl)
-        {
-            DateTime[] dt = Utility.TTL_DT_DeSerialize(ttl);
-            return TTL_Is_Expired(dt);
-        }
-        /// <summary>
-        /// Utility function for check if Item Cache is Expired.
-        /// </summary>
-        /// <param name="ttl"></param>
-        /// <returns></returns>
-        internal static bool TTL_Is_Expired(DateTime[] ttl)
+        internal static bool TTL_Is_Expired(DateTime slidingExpiration_DT, DateTime absoluteExpiration_DT)
         {
             DateTime dtNow = DateTime.Now.ToUniversalTime();
-            if ((dtNow > ttl[0]) || (dtNow > ttl[1]))
+            if ((dtNow > slidingExpiration_DT) || (dtNow > absoluteExpiration_DT))
             {
                 return true;
             }
