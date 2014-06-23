@@ -82,5 +82,9 @@ namespace Redis.Cache
 
             this.Data = (T)Utility.ConvertRedisValueToObject(this.Serialized_Data, typeof(T), this.StatusItem);
         }
+        public void UpdateSerialized_TTL()
+        {
+            this.Serialized_TTL = Utility.TTLSerialize(this.SlidingExpiration_TS, this.AbsoluteExpiration_TS, this.AbsoluteExpiration_DT, this.StatusItem);
+        }
     }
 }

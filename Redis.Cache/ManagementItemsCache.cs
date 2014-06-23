@@ -213,8 +213,9 @@ namespace Redis.Cache
                     //Update SLI TTL on Redis...
                     if (itemCacheInfo.SlidingExpiration_DT != DateTime.MaxValue)
                     {
-                        string ttl = Utility.TTLSerialize(itemCacheInfo.SlidingExpiration_TS, itemCacheInfo.AbsoluteExpiration_TS, itemCacheInfo.AbsoluteExpiration_DT, itemCacheInfo.StatusItem);
-                        dal.UpdateTTL_Item(key, ttl);
+                        itemCacheInfo.UpdateSerialized_TTL();       //Update TTL
+
+                        dal.UpdateTTL_Item(key, itemCacheInfo.Serialized_TTL);
                         dal.SetTTL(key, itemCacheInfo.SlidingExpiration_TS);
                     }
                     ItemCache<T> result = new ItemCache<T>();
