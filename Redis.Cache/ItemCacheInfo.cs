@@ -66,7 +66,8 @@ namespace Redis.Cache
             this.Serialized_Data = Utility.ConvertObjToRedisValue(this.Data, out _StatusItem);
             this.StatusItem = _StatusItem;
 
-            this.Serialized_TTL = Utility.TTLSerialize(this.SlidingExpiration_TS, this.AbsoluteExpiration_TS, this.AbsoluteExpiration_DT, this.StatusItem);
+            this.UpdateSerialized_TTL();    //Update TTL and generate new ttl string.
+            this.Serialized_TTL = this.Serialized_TTL;
         }
         public void DeSerializeInfo()
         {
