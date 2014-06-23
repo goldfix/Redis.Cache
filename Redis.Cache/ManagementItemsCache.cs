@@ -218,6 +218,8 @@ namespace Redis.Cache
                         dal.UpdateTTL_Item(key, itemCacheInfo.Serialized_TTL);
                         dal.SetTTL(key, itemCacheInfo.SlidingExpiration_TS);
                     }
+
+                    //Prepare ItemCache Result...
                     ItemCache<T> result = new ItemCache<T>();
                     result.SlidingExpiration = itemCacheInfo.SlidingExpiration_TS;
                     result.AbsoluteExpiration = itemCacheInfo.AbsoluteExpiration_TS;
