@@ -35,7 +35,7 @@ _Changed TTL serialization. This version is not compatible with previous version
 
 **What?**
 
-It is changed format TTL serialization of items.
+It is changed format TTL and Date / Time serialization of items.
 
 * Old format TTL serialization was: hhmmss. Sample: 002000 == 20 minutes.
 * New format TTL serialization is: total seconds. Sample: 1200 == 20 minutes.
