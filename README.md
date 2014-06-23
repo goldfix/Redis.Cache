@@ -24,7 +24,7 @@ Configuration Parameters
 
 Here: https://github.com/goldfix/Redis.Cache/wiki/_pages
 
-Last Version is: 0.9.1
+Last Version is: 0.9.2
 ----------------------
 
 Small optimization.
