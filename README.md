@@ -31,7 +31,7 @@ Small optimization.
 
 *Important!*
 
-_Changed TTL serialization. This version is not compatible with previous versions. Is necessary to empty database (used to save cache items) and reboot your Redis Server instance._
+_Changed TTL and Date / Time serialization. This version is not compatible with previous versions. Is necessary to empty database (used to save cache items) and reboot your Redis Server instance._
 
 **What?**
 
