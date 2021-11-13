@@ -3,7 +3,7 @@
 Redis.Cache
 ===========
 
-Small library for manage cache with Redis.
+Small library (C#) to manage the cache with Redis.
 
 Feature
 -------
@@ -28,10 +28,6 @@ Last Version is: 0.9.2
 ----------------------
 
 Small optimization.
-
-*Important!*
-
-_Changed TTL and Date / Time serialization. This version is not compatible with previous versions. Is necessary to empty database (used to save cache items) and reboot your Redis Server instance._
 
 **What?**
 
